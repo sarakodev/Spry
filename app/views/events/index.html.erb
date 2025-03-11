@@ -1,0 +1,12 @@
+  <% @events.each do |event| %>
+    <strong> <%= event.name %></strong>
+    <p> Location: <%= event.location %></p>
+    <p> Date and time: <%= event.datetime %></p>
+    <p> Number of participants: <%= event.participants %></p>
+    <% if event.pace? %>
+      <p>Pace: <%= event.pace %>㎡</p>
+    <% end %>
+    <% if event.description? %>
+      <p>Description: <%= event.decription %>㎡</p>
+    <% end %>
+  <% end %>
