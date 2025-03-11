@@ -8,11 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dexzpdaju/image/upload/v1741701016/favicon_3_a3jyp2.ico">
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+  <% unless controller_name == 'pages' && action_name == 'home' %>
+    <%= render "shared/navbar" %>
+  <% end %>
+  <%= render "shared/flashes" %>
+  <%= yield %>
   </body>
 </html>
