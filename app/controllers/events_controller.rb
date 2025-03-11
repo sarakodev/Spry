@@ -14,6 +14,12 @@ class EventsController < ApplicationController
           render :new, status: :unprocessable_entity
         end
       end
+    def show
+        @event = Event.find(params[:id])
+        if @event.nil?
+          redirect_to events_path, alert: "Van non trouvé."
+        end   
+    end
     private
 
   def event_params
