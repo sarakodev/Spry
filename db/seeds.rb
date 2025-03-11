@@ -7,7 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 User.destroy_all
 puts "users destroyed"
 
@@ -34,3 +33,11 @@ john.photo.attach(
 john.save!
 
 puts "created user"
+
+event = Event.new(name: "Run",
+location: "16 Villa Gaudelet",
+datetime: Time.now,
+photo: "https://res.cloudinary.com/dhyuv86iu/image/upload/v1741344946/development/ifqxh6mcwua0pf4qk9rblye8ims2.jpg",
+pace: 6.3,
+participants: 4,
+user_id: 5)
