@@ -1,0 +1,11 @@
+    <strong> <%= @event.name %></strong>
+    <p> Location: <%= @event.location %></p>
+    <p> Date and time: <%= @event.datetime %></p>
+    <p> Number of participants: <%= @event.participants %></p>
+    <p> distance: <%= @event.participants %> km</p>
+    <p> description: <%= @event.description %></p>
+    <p><%= @event.user.first_name %></p>
+    <% if @event.pace? %>
+      <p>Pace: <%= @event.pace %></p>
+    <% end %>
+    <%= link_to "Retour", events_path, class: "btn btn-secondary" %>
