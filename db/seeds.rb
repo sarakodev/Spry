@@ -7,3 +7,30 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+User.destroy_all
+puts "users destroyed"
+
+marie = User.new(first_name: "Marie", last_name: "Dupont", email: "marie@mail.com", password: "password")
+
+marie.photo.attach(
+  io: URI.open('https://kitt.lewagon.com/placeholder/users/cveneziani'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+
+marie.save!
+
+puts "created user"
+
+john = User.new(first_name: "John", last_name: "Doe", email: "john@mail.com", password: "password")
+
+john.photo.attach(
+  io: URI.open('https://kitt.lewagon.com/placeholder/users/arthur-littm'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+
+john.save!
+
+puts "created user"
