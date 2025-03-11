@@ -39,7 +39,7 @@ location: "16 Villa Gaudelet",
 datetime: Time.now,
 pace: 6.3,
 participants: 4,
-user_id: 5)
+user: User.first)
 
 event.save!
 
