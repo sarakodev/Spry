@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-
+    if params[:search][:address].present?
+      @events = @events.near(params[:search][:address], 10)
+    end
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -34,6 +36,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :pace, :datetime, :description, :participants, :address)
+    params.require(:event).permit(:name, :pace, :datetime, :description, :participants, :address, :kilometers, :photo)
   end
 end
