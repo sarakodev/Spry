@@ -10,18 +10,24 @@
   <div class="event-show-card">
     <h2><%= @event.name %></h2>
     <p> Location: <%= @event.location %></p>
-    <p> Date and time: <%= @event.datetime %></p>
+    <p> Date and time: <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
     <p> Number of participants: <%= @event.participants %></p>
-    <p> distance: <%= @event.participants %> km</p>
-    <p> description: <%= @event.description %></p>
-    <% if @event.pace? %>
-    <p>Pace: <%= @event.pace %></p>
-    <% end %>
-    <%= link_to "Retour", events_path, class: "btn btn-secondary" %>
+    <p> Distance: <%= @event.kilometers %> km</p>
+    <p> Description: <%= @event.description %></p>
+    <p> Pace: <%= @event.pace %></p>
   </div>
 </div>
 
-<div class="user-container">
-  <%= cl_image_tag @event.user.photo.key %>
-  <p>Organizer: <%= @event.user.first_name %></p>
+<div class="container">
+  <div class="user-container">
+    <%= cl_image_tag @event.user.photo.key, class: "avatar-large" %>
+    <div class="d-flex flex-column justify-content-center">
+      <p class="m-0" >Organizer: <%= @event.user.first_name %></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="d-flex justify-content-center">
+  <button class="btn btn-secondary">Register</button>
 </div>

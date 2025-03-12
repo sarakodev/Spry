@@ -1,4 +1,23 @@
 @import "components/cover_photo";
-@import "components/event_show_card";
+@import "components/cards";
 @import "components/buttons";
+@import "components/avatar";
 
+
+.user-container {
+  border-top: 1px solid #780245 ;
+  border-bottom: 1px solid #780245 ;
+  margin-bottom: 20px;
+  height: 10vh;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+
+.user-container p {
+  font-size: 15px;
+  opacity: .8;
+}
