@@ -27,7 +27,21 @@
   border-radius: 15px;
 }
 
-#submit_btn_container {
+#log_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#sign_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#event_submit_btn_container {
   display: flex;
   justify-content: center;
   max-width: 300px;
