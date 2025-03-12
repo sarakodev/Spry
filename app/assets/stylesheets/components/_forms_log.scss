@@ -1,4 +1,4 @@
-.logo-container {
+.logo-container-form {
   display: flex;
   justify-content: center;
   margin: 35px 0;
@@ -27,7 +27,21 @@
   border-radius: 15px;
 }
 
-#submit_btn_container {
+#log_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#sign_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#event_submit_btn_container {
   display: flex;
   justify-content: center;
   max-width: 300px;
@@ -50,6 +64,7 @@
 
 .login_btn_container {
   display: flex;
+  padding: 1px;
   max-width: 70px;
   margin: 25px 0px 25px 63px;
 }
