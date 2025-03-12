@@ -1,0 +1,80 @@
+.logo-container-form {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+#logo {
+  background-color: #780245;
+  height: 112px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin: 35px 0;
+}
+
+.form_container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.inputs {
+  border-radius: 15px;
+}
+
+#log_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#sign_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#event_submit_btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: #780245;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  color: black;
+  background-color: #FF5400;
+  border-color: transparent;
+}
+
+.login_btn_container {
+  display: flex;
+  padding: 1px;
+  max-width: 70px;
+  margin: 25px 0px 25px 63px;
+}
+
+.signup_btn_container {
+  justify-content: center;
+  max-width: 300px;
+  margin: 25px 0px 25px 63px;
+}
+
+.links_secondary {
+  color: rgb(0, 0, 0);
+}
