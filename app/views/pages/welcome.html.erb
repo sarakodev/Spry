@@ -7,4 +7,9 @@
     <%= link_to 'Join an event', events_path, class: 'btn btn-bk btn-purple mx-auto mb-4' %>
     <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-purple mx-auto mb-4' %>
   </div>
+
+  <div class="map-welcome" style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
