@@ -1,28 +1,29 @@
 // Specific CSS for your welcome
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Inter', sans-serif;
-}
 
 .welcome-page {
   padding: 20px;
   background-color: #f9f9f9;
   text-align: center;
+  height: 100vh;
 }
 
-h2 {
-  font-size: 28px;
+.title-welcome {
+  font-size: 34px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
-p {
+.description-welcome {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 54px;
 }
 
-.options {
+.logo-welcome {
+  width: 50%;
+}
+
+.title-question {
+  font-size: 24px;
   margin-bottom: 30px;
+  font-weight: bold;
 }

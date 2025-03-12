@@ -1,6 +1,9 @@
-<%= simple_form_for(event) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="form_container">
+  <%= simple_form_for(event) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
 
   <div class="form-inputs">
     <%= f.input :name, label: "name"%>
@@ -8,13 +11,13 @@
     <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control"  %>
     <%= f.input :description, label: "Description"%>
     <%= f.input :participants, label: "Partcipants"%>
-    <%= f.input :kilometers, label: "kilometers"%>
+    <%= f.input :kilometers, label: "distance"%>
     <%= f.input :location, label: "Location"%>
     <%= f.input :photo, as: :file %>
-
  </div>
 
-  <%= f.button :submit, value: "Créer mon event", class: "ms-2 btn btn-flat   "%>
-<% end %>
 
-  
+<div class="form-actions" id="event_submit_btn_container">
+  <%= f.button :submit, value: "Create my event", class: "ms-2 btn btn-flat"%>
+</div>
+  <% end %>

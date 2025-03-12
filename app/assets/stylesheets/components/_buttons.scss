@@ -1,15 +1,23 @@
-.button {
+.btn-bk {
   display: block;
-  width: 100%;
-  margin: 10px 0;
+  width: 70%;
   color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
   background: #000000;
   transition: 0.3s ease;
+  font-size: 16px;
 }
 
-.button:hover {
+.btn-bk:hover {
   background: #3D3D3D;
-  color: white;
+}
+
+.btn-purple {
+  background: #780245;
+}
+
+.btn-purple:hover {
+  background: #52012e ;
 }
