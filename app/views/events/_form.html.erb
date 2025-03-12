@@ -3,16 +3,14 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :name, label: "name"%>
-    <%= f.input :pace, label: "pace" %>
+    <%= f.input :name, label: "Name"%>
+    <%= f.input :pace, label: "Pace" %>
     <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control"  %>
     <%= f.input :description, label: "Description"%>
-    <%= f.input :participants, label: "Partcipants"%>
-    <%= f.input :kilometers, label: "distance"%>
+    <%= f.input :participants, label: "Participants"%>
+    <%= f.input :kilometers, label: "Distance"%>
     <%= f.input :location, label: "Location"%>
  </div>
 
-  <%= f.button :submit, value: "Créer mon event", class: "ms-2 btn btn-flat   "%>
+  <%= f.button :submit, value: "Create an event", class: "ms-2 btn btn-flat   "%>
 <% end %>
-
-  
