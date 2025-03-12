@@ -14,7 +14,7 @@ marie = User.new(first_name: "Marie", last_name: "Dupont", email: "marie@mail.co
 
 marie.photo.attach(
   io: URI.open('https://kitt.lewagon.com/placeholder/users/cveneziani'),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  filename: 'marie.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
 )
 
@@ -26,11 +26,15 @@ john = User.new(first_name: "John", last_name: "Doe", email: "john@mail.com", pa
 
 john.photo.attach(
   io: URI.open('https://kitt.lewagon.com/placeholder/users/arthur-littm'),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  filename: 'john.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
 )
 
 john.save!
+
+Event.destroy_all
+
+puts "events destroyed"
 
 puts "created user"
 
@@ -40,6 +44,29 @@ datetime: Time.now,
 pace: 6.3,
 participants: 4,
 user: User.first)
+
+event.photo.attach(
+  io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1741776937/Design_sans_titre-5_mrb34s.png'),
+  filename: 'run1.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+event.save!
+
+puts "created event"
+
+
+event = Event.new(name: "Run récup",
+  location: "Bastille",
+  datetime: Time.now,
+  pace: 7.0,
+  participants: 2,
+  user: User.last)
+
+  event.photo.attach(
+    io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1741776979/miguel-a-amutio-Y0woUmyxGrw-unsplash_j6vhzh.jpg'),
+    filename: 'run2.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
 
 event.save!
 
