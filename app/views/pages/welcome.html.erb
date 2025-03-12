@@ -5,14 +5,13 @@
   <h2 class="title-question">What would you like to do?</h2>
   <div class="buttons">
     <%= link_to 'Join an event', events_path, class: 'btn btn-bk btn-purple mx-auto mb-4' %>
-    <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-purple mx-auto mb-4' %>
+    <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-purple mx-auto mb-5' %>
   </div>
 
-  <div style="height: 150px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-show-controls-value="false"
-  data-map-show-popup-value="false"
-  data-map-zoom-map-value="false"></div>
+  <%= simple_form_for :search, url: events_path, method: :get do |f| %>
+  <%= f.input :address, label: false,
+  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+  <%= f.button :submit %>
+  <% end %>
 </div>
