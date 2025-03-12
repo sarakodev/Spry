@@ -1,20 +1,32 @@
-<h2>Log in</h2>
+<div class="logo-container">
+  <img id="logo" src="https://res.cloudinary.com/dxmzqi2oa/image/upload/v1741774495/Spry_logo_vector_tgi19v.png" alt="spry logo">
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+<div>
+  <h2 class="title">Log in</h2>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+<div class="form_container">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<%= render "devise/shared/links" %>
+    <div class="form-inputs" id="login_form">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  placeholder: "mscott@mail.com",
+                  input_html: { autocomplete: "email", class: "inputs"} %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "inputs"} %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+</div>
+
+<div class="form-actions" id="submit_btn_container">
+  <%= f.button :submit, "Log in",input_html: { class: "submit_btn"} %>
+</div>
+  <% end %>
+
+<div class="signup_btn_container">
+  <%= render "devise/shared/links" %>
+</div>
