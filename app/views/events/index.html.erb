@@ -1,13 +1,44 @@
   <% @events.each do |event| %>
-  <%= link_to event_path(event), class: "plain" do %>
-    <strong> <%= event.name %></strong>
-    <p> Location: <%= event.location %></p>
-    <p> Date and time: <%= event.datetime %></p>
-    <p> Number of participants: <%= event.participants %></p>
-    <p> distance: <%= event.participants %> km</p>
-    <p><%= event.user.first_name %></p>
-    <% if event.pace? %>
-      <p>Pace: <%= event.pace %></p>
-    <% end %>
-    <% end %>
+  <div class="card-home">
+    <%= link_to event_path(event), class: "plain" do %>
+      <div class="event-image container mb-3 mt-3">
+        <% if event.photo.attached? %>
+              <%= cl_image_tag event.photo.key, class: "card-img"%>
+        <% end %>
+      </div>
+    <div class="card-body">
+    
+        <div class="container">
+          
+          <div class="row align-items-center">
+          <h3><strong><%= event.name %></strong></h3>
+          <div class="col-5 d-flex flex-column">
+            <p class="event-date mb-0 text"><%= event.datetime.strftime("%B %d, %H:%M") %>
+            </p>
+          </div>
+        <div class="col-6 d-flex align-items-center">
+          <p class="event-location mb-0 text" >📍 <%= event.location %>
+          </p>
+        </div>
+          <div class="col-5  d-flex align-items-center">
+            <p class="event-spots mb-0 text">
+              <strong><%= event.participants %></strong> participants
+            </p>
+          </div>
+          <div class="col-5  d-flex align-items-center">
+
+            <p class="event-distance mb-0 text">
+              🏃 <%= event.kilometers %> km
+            </p>
+          </div>
+          <div class="col-auto text-end mb-0">
+            <% if event.user.photo.attached? %>
+            <%= cl_image_tag event.user.photo.key, class: "rounded-circle event-avatar"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
+<% end %>

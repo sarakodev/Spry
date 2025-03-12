@@ -8,8 +8,10 @@
     <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control"  %>
     <%= f.input :description, label: "Description"%>
     <%= f.input :participants, label: "Partcipants"%>
-    <%= f.input :kilometers, label: "distance"%>
+    <%= f.input :kilometers, label: "kilometers"%>
     <%= f.input :location, label: "Location"%>
+    <%= f.input :photo, as: :file %>
+
  </div>
 
   <%= f.button :submit, value: "Créer mon event", class: "ms-2 btn btn-flat   "%>
