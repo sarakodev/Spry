@@ -3,16 +3,19 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :name, label: "name",input_html: { class: "inputs"} %>
-      <%= f.input :pace, label: "pace",input_html: { class: "inputs"} %>
-      <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control inputs" %>
-      <%= f.input :description, label: "Description",input_html: { class: "inputs"} %>
-      <%= f.input :participants, label: "Partcipants",input_html: { class: "inputs"} %>
-      <%= f.input :kilometers, label: "distance",input_html: { class: "inputs"} %>
-      <%= f.input :location, label: "Location",input_html: { class: "inputs"} %>
-  </div>
-</div>
+
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "name"%>
+    <%= f.input :pace, label: "pace" %>
+    <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control"  %>
+    <%= f.input :description, label: "Description"%>
+    <%= f.input :participants, label: "Partcipants"%>
+    <%= f.input :kilometers, label: "distance"%>
+    <%= f.input :location, label: "Location"%>
+    <%= f.input :photo, as: :file %>
+ </div>
+
 
 <div class="form-actions" id="event_submit_btn_container">
   <%= f.button :submit, value: "Create my event", class: "ms-2 btn btn-flat"%>
