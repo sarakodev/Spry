@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resources :bookings do
     resources :bookings, only: :index
   end
+  resources :users , only: %i[show] 
+
 end

@@ -1,0 +1,13 @@
+<div class="profile-navigation">
+  <%= link_to '<', events_path, class: 'return-btn-profile' %>
+  <h3>My profile</h3>
+</div>
+
+
+<div class="container">
+
+  <div class="user-infos">
+    <div class="profile-background"></div>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-profile"%>
+  </div>
+</div>
