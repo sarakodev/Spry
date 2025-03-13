@@ -4,14 +4,16 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   data-map-show-controls-value="false"
   data-map-show-popup-value="false"
-  data-map-zoom-map-value="false"></div>
+  data-map-zoom-map-value="true"></div>
 
 <% @events.each do |event| %>
   <div class="card-home">
     <%= link_to event_path(event), class: "plain" do %>
       <div class="event-image container mb-3 mt-3">
         <% if event.photo.attached? %>
-              <%= cl_image_tag event.photo.key, class: "card-img"%>
+          <%= cl_image_tag event.photo.key, class: "card-img"%>
+        <% else%>
+          <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741190112/development/2yjwlody3oudx5hkk0f8vv05q2k8.jpg" class= "card-img" alt="running event">
         <% end %>
       </div>
     <div class="card-body">
