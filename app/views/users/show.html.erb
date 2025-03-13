@@ -8,6 +8,21 @@
 
   <div class="user-infos">
     <div class="profile-background"></div>
-    <%= cl_image_tag current_user.photo.key, class: "avatar-profile"%>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
   </div>
+</div>
+
+
+<div class="container">
+  <h2 class="title-dashboard">My organized events</h2>
+  <% @events_as_organizer.each do |event| %>
+    <%= render "events/event", event: event %>
+  <% end %>
+</div>
+
+<div class="container">
+  <h2 class="title-dashboard">My events as participant</h2>
+  <% @events_as_participant.each do |event| %>
+    <%= render "events/event", event: event %>
+  <% end %>
 </div>
