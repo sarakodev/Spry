@@ -1,0 +1,16 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+.mapboxgl-popup-content {
+  text-align: center;
+}
+
+.plain {
+  text-decoration: none;
+  color: black;
+}
+
+.plain:hover {
+  text-decoration: none;
+  color: rgb(98, 92, 92);
+}

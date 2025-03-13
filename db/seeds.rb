@@ -58,7 +58,7 @@ Event.destroy_all
 puts "events destroyed"
 
 event = Event.new(name: "Morning Sprint",
-  location: "Champs-Élysées",
+  location: "Champs-Élysées, Paris",
   datetime: Time.now,
   pace: 5.2,
   participants: 3,
@@ -77,7 +77,7 @@ event.save!
 puts "created event"
 
 event = Event.new(name: "Sunset Jog",
-  location: "Montmartre",
+  location: "Montmartre, Paris",
   datetime: Time.now,
   pace: 6.5,
   participants: 5,
@@ -96,7 +96,7 @@ event.save!
 puts "created event"
 
 event = Event.new(name: "Speed Training",
-  location: "Bois de Boulogne",
+  location: "Parc de Montsouris",
   datetime: Time.now,
   pace: 4.8,
   participants: 6,
@@ -116,7 +116,7 @@ puts "created event"
 
 
 event = Event.new(name: "Long Distance Challenge",
-  location: "Seine Riverbanks",
+  location: "Rue de Rivoli",
   datetime: Time.now,
   pace: 6.0,
   participants: 8,
@@ -135,7 +135,7 @@ event.save!
 puts "created event"
 
 event = Event.new(name: "Park Loops",
-  location: "Tuileries Garden",
+  location: "Parc des Tuileries",
   datetime: Time.now,
   pace: 6.2,
   participants: 3,
@@ -153,7 +153,7 @@ event.save!
 puts "created event"
 
 event = Event.new(name: "Social Sunday Run",
-  location: "Notre-Dame",
+  location: "Ile Saint-Louis",
   datetime: Time.now,
   pace: 6.7,
   participants: 6,
@@ -171,7 +171,7 @@ event.save!
 puts "created event"
 
 event = Event.new(name: "Louvre Run",
-  location: "Louvre",
+  location: "Musée d'Orsay",
   datetime: Time.now,
   pace: 6.3,
   participants: 10,
@@ -190,7 +190,7 @@ puts "created event"
 
 
 event = Event.new(name: "Mountain run",
-  location: "Chambéry",
+  location: "Ascain",
   datetime: Time.now,
   pace: 7.0,
   participants: 10,
