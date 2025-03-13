@@ -1,11 +1,13 @@
 class BookingsController < ApplicationController
     def index
-        @events = event.all
+        @booking = Booking.all
     end
-    # def new
-    #     @event = Event.find(params[:event_id])
-    #     @booking = Booking.new
-    # end
+    def show
+        @booking = Booking.find(params[:id])
+        if @booking.nil?
+          redirect_to vans_path, alert: "reservation non trouvé non trouvé."
+        end
+    end
     def create
         @booking = Booking.new(status: "En attente")
         @booking.user = current_user
