@@ -6,18 +6,17 @@
 
 
   <div class="form-inputs">
-    <%= f.input :name, label: "Name"%>
-    <%= f.input :pace, label: "Pace" %>
-    <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control"  %>
-    <%= f.input :description, label: "Description"%>
-    <%= f.input :participants, label: "Participants"%>
-    <%= f.input :kilometers, label: "Distance"%>
-    <%= f.input :location, label: "Location"%>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :name, label: "Name", input_html: { class: "inputs"}  %>
+    <%= f.input :pace, label: "Pace", input_html: { class: "inputs"}  %>
+    <%= f.datetime_local_field :datetime, label: "Datetime", class: "form-control inputs" %>
+    <%= f.input :description, label: "Description", input_html: { class: "inputs"}  %>
+    <%= f.input :participants, label: "Participants", input_html: { class: "inputs"}  %>
+    <%= f.input :kilometers, label: "Distance", input_html: { class: "inputs"}  %>
+    <%= f.input :location, label: "Location", input_html: { class: "inputs"}  %>
+    <%= f.input :photo, as: :file, input_html: { class: "inputs"}  %>
  </div>
 
 <div class="form-actions" id="event_submit_btn_container">
   <%= f.button :submit, value: "Create my event", class: "ms-2 btn btn-flat"%>
 </div>
   <% end %>
-
