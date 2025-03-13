@@ -1,6 +1,13 @@
 <div class="profile-navigation">
-  <%= link_to '<', events_path, class: 'return-btn-profile' %>
-  <h3>My profile</h3>
+  <%= link_to events_path, class: "nav-icon left" do %>
+    <i class="fa-solid fa-chevron-left"></i>
+  <% end %>
+
+  <h3 class="profile-title">My profile</h3>
+
+  <%= link_to events_path, class: "nav-icon right" do %>
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+  <% end %>
 </div>
 
 
@@ -9,20 +16,25 @@
   <div class="user-infos">
     <div class="profile-background"></div>
     <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
+    <div class="user-fullname"><%= current_user.fullname %></div>
   </div>
 </div>
 
 
-<div class="container">
-  <h2 class="title-dashboard">My organized events</h2>
-  <% @events_as_organizer.each do |event| %>
-    <%= render "events/event", event: event %>
-  <% end %>
-</div>
+<div class="container users-list">
 
-<div class="container">
-  <h2 class="title-dashboard">My events as participant</h2>
-  <% @events_as_participant.each do |event| %>
-    <%= render "events/event", event: event %>
-  <% end %>
+  <div class="dashboard-container">
+    <h2 class="title-dashboard">My organized events</h2>
+    <% @events_as_organizer.each do |event| %>
+      <%= render "events/event", event: event %>
+    <% end %>
+  </div>
+
+  <div class="dashboard-container">
+    <h2 class="title-dashboard">My events as participant</h2>
+    <% @events_as_participant.each do |event| %>
+      <%= render "events/event", event: event %>
+    <% end %>
+  </div>
+
 </div>

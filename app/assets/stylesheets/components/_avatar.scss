@@ -30,10 +30,10 @@
 
 
 .avatar-profile{
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  object-fit: cover;
+  display: block;
   position: absolute;
-
+  top: 35px;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
 }
