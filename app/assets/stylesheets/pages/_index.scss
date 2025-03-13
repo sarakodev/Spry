@@ -1,5 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+
 .plain {
     text-decoration: none;
+    color: black;
+    border: none
   }
+
+// To be deleted? If the events in the seed or the map size changes
+.empty {
+  margin-bottom: 70px;
+}
