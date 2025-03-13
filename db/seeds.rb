@@ -227,3 +227,16 @@ event.save!
 puts "created event"
 
 puts "all done!"
+
+
+e = Booking.new(event_id: Event.first.id, user_id: User.first.id, status: 'Pending')
+e.save
+puts 'created a booking'
+
+f = Booking.new(event_id: Event.second.id, user_id: User.second.id, status: 'Accepted')
+f.save
+puts 'created a booking'
+
+g = Booking.new(event_id: Event.second.id, user_id: User.second.id, status: 'Declined')
+g.save
+puts 'created a booking'
