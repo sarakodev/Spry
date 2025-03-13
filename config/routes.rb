@@ -16,10 +16,17 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :events do
     resources :bookings, only: %i[create]
-  end 
+  end
+
+  # Bookings
   resources :bookings do
     resources :bookings, only: :index
+    member do
+      patch :accept
+      patch :reject
+    end
   end
-  resources :users , only: %i[show] 
 
+  # Users
+  resources :users , only: %i[show]
 end

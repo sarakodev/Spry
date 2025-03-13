@@ -27,12 +27,14 @@
     </div>
   </div>
 </div>
-  
 
-<div class="d-flex justify-content-center">
-<% if @booking.event.user == current_user %>
-        bouton
+<% if @booking.status == 'Pending' && @booking.event.user == current_user %>
+<div class="button-status d-flex">
+  <%= button_to 'Accept', accept_booking_path(@booking), method: :patch, class: 'btn' %>
+  <%= button_to 'Decline', reject_booking_path(@booking), method: :patch, class: 'btn' %>
+</div>
 <% else %>
-    <%= @booking.status %></p>
+<div class="status d-flex justify-content">
+  <%= @booking.status %>
 </div>
 <% end %>
