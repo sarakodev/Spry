@@ -11,7 +11,9 @@
     <%= link_to event_path(event), class: "plain" do %>
       <div class="event-image container mb-3 mt-3">
         <% if event.photo.attached? %>
-              <%= cl_image_tag event.photo.key, class: "card-img"%>
+          <%= cl_image_tag event.photo.key, class: "card-img"%>
+        <% else%>
+          <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741190112/development/2yjwlody3oudx5hkk0f8vv05q2k8.jpg" class= "card-img" alt="running event">
         <% end %>
       </div>
     <div class="card-body">
