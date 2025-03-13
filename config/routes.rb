@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :events do
     resources :bookings, only: %i[create]
+  end 
+  resources :bookings do
+    resources :bookings, only: :index
   end
-
   resources :users , only: %i[show] 
+
 end
