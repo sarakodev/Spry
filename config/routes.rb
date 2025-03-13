@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'pages#welcome'
 
   # root "posts#index"
-  resources :events
+  resources :events do
+    resources :bookings, only: %i[create]
+  end 
 end
