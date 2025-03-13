@@ -1,0 +1,40 @@
+<div class="picture-container">
+  <% if @booking.event.photo.attached? %>
+    <%= cl_image_tag @booking.event.photo.key, class: "cover-photo" %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741778812/Design_sans_titre-5_lbuads.png" class="cover-photo" >
+  <% end %>
+  <%= link_to '<', events_path, class: 'return-btn' %>
+</div>
+
+<div class="container">
+  <div class="event-show-card">
+    <h2><strong><%= @booking.event.name %></strong></h2>
+    <p> 📜 Description: <%= @booking.event.description %></p>
+    <p> 📅 Date and time: <%= @booking.event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
+    <p> 📍Location : <%= @booking.event.location %></p>
+    <p> 🏃🏻‍➡️ Participants: <%= @booking.event.participants %></p>
+    <p> ⛽ Distance: <%= @booking.event.kilometers %> km</p>
+    <p> 🏎️ Pace: <%= @booking.event.pace %></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="user-container">
+    <%= cl_image_tag @booking.event.user.photo.key, class: "avatar-large" %>
+    <div class="d-flex flex-column justify-content-center">
+      <p class="m-0" >Organizer: <%= @booking.event.user.first_name %></p>
+    </div>
+  </div>
+</div>
+
+<% if @booking.status == 'Pending' && @booking.event.user == current_user %>
+<div class="button-status d-flex">
+  <%= button_to 'Accept', accept_booking_path(@booking), method: :patch, class: 'btn' %>
+  <%= button_to 'Decline', reject_booking_path(@booking), method: :patch, class: 'btn' %>
+</div>
+<% else %>
+<div class="status d-flex justify-content">
+  <%= @booking.status %>
+</div>
+<% end %>

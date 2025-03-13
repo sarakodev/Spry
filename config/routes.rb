@@ -18,5 +18,15 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
   end
 
-  resources :users , only: %i[show] 
+  # Bookings
+  resources :bookings do
+    resources :bookings, only: :index
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
+  # Users
+  resources :users , only: %i[show]
 end

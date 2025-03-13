@@ -1,10 +1,16 @@
-<div style="height: 150px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-show-controls-value="false"
-  data-map-show-popup-value="false"
-  data-map-zoom-map-value="true"></div>
+<div class="map-container">
+  <div style="height: 250px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-map-show-controls-value="true"
+    data-map-show-popup-value="true"
+    data-map-zoom-map-value="true">
+      <%= link_to 'events/new', class: 'map-btn-add' do %>
+        <i class="fa-solid fa-plus" style="color: #000000;"></i>
+      <% end %>
+  </div>
+</div>
 
 <% @events.each do |event| %>
   <div class="card-home">
@@ -52,3 +58,4 @@
   <% end %>
     </div>
   <% end %>
+  <div class="empty"></div>
