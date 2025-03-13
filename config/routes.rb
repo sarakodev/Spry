@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   # root "posts#index"
   resources :events do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
   end 
 end
