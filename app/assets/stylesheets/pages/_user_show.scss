@@ -1,1 +1,30 @@
 @import "components/avatar";
+@import "components/buttons";
+
+
+
+.profile-navigation {
+  background-color: white;
+  height: 3em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 1em;
+}
+
+.user-infos {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-background {
+  background-color: #780245;
+  height: 6em;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 0;
+
+}
