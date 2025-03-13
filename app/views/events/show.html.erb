@@ -1,20 +1,21 @@
-<div>
+<div class="picture-container">
   <% if @event.photo.attached? %>
     <%= cl_image_tag @event.photo.key, class: "cover-photo" %>
   <% else %>
     <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741778812/Design_sans_titre-5_lbuads.png" class="cover-photo" >
   <% end %>
+  <%= link_to '<', events_path, class: 'return-btn' %>
 </div>
 
 <div class="container">
   <div class="event-show-card">
     <h2><%= @event.name %></h2>
-    <p> Location: <%= @event.location %></p>
-    <p> Date and time: <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
-    <p> Number of participants: <%= @event.participants %></p>
-    <p> Distance: <%= @event.kilometers %> km</p>
-    <p> Description: <%= @event.description %></p>
-    <p> Pace: <%= @event.pace %></p>
+    <p> 📜 Description: <%= @event.description %></p>
+    <p> 📅 Date and time: <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
+    <p> 📍Location : <%= @event.location %></p>
+    <p> 🏃🏻‍➡️ Participants: <%= @event.participants %></p>
+    <p> ⛽ Distance: <%= @event.kilometers %> km</p>
+    <p> 🏎️ Pace: <%= @event.pace %></p>
   </div>
 </div>
 
@@ -29,5 +30,5 @@
 
 
 <div class="d-flex justify-content-center">
-  <button class="btn btn-secondary">Register</button>
+  <button class="btn">Register</button>
 </div>
