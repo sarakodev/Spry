@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :events, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :events_as_participant, through: :bookings, source: :event
+
+  # has_many :bookings_as_event_organizer, through: :events, source: :bookings
+  # has_many :bookings_as_event_seeker, class_name: "Booking", dependent: :destroy
 
   has_one_attached :photo
 

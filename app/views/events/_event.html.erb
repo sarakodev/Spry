@@ -1,0 +1,15 @@
+<div class="container-card d-flex">
+
+  <% if event.photo.attached? %>
+    <%= cl_image_tag event.photo.key, class: "" %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741778812/Design_sans_titre-5_lbuads.png" class="" >
+  <% end %>
+
+
+  <div class="container-info d-flex flex-column align-items-start col-4">
+    <div class="title-dash"><%= event.name %></div>
+    <div class="start-date">Date de début : <%= event.location %></div>
+  </div>
+
+</div>
