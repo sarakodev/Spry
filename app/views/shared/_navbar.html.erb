@@ -9,7 +9,7 @@
     <%= link_to "#", class: "navbar-item" do %>
       <i class="fa-regular fa-comments"></i>
     <% end %>
-    <%= link_to "#", class: "navbar-item" do %>
+    <%= link_to user_path, class: "navbar-item" do %>
       <%= cl_image_tag current_user.photo.key, class: "avatar-navbar"%>
     <% end %>
   </div>
