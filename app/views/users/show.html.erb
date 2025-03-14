@@ -24,16 +24,21 @@
 <div class="container users-list">
 
   <div class="dashboard-container">
-    <h2 class="title-dashboard">My organized events</h2>
-    <% @events_as_organizer.each do |event| %>
-      <%= render "events/event", event: event %>
+    <% if @events_as_organizer.any? %>
+      <h2 class="title-dashboard">My events as an organizer</h2>
+      <% @events_as_organizer.each do |event| %>
+        <%= render "events/event", event: event %>
+      <% end %>
     <% end %>
   </div>
 
+
   <div class="dashboard-container">
-    <h2 class="title-dashboard">My events as participant</h2>
-    <% @events_as_participant.each do |event| %>
-      <%= render "events/event", event: event %>
+    <% if @events_as_participant.any? %>
+      <h2 class="title-dashboard">My events as a participant</h2>
+      <% @events_as_participant.each do |event| %>
+        <%= render "events/event", event: event %>
+      <% end %>
     <% end %>
   </div>
 
