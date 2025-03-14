@@ -23,17 +23,17 @@ class BookingsController < ApplicationController
 
   def accept
     if @booking.accept!
-      redirect_to @booking, notice: 'Registration accepted.'
+      redirect_to @booking.event, notice: 'Registration accepted.'
     else
-      redirect_to @booking, alert: 'Error: registration could not be accepted'
+      redirect_to @booking.event, alert: 'Error: registration could not be accepted'
     end
   end
 
   def reject
     if @booking.reject!
-      redirect_to @booking, notice: 'Registration declined.'
+      redirect_to @booking.event, notice: 'Registration declined.'
     else
-      redirect_to @booking, alert: 'Error: registration could not be declined'
+      redirect_to @booking.event, alert: 'Error: registration could not be declined'
     end
   end
 

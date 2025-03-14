@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 
   # Users
   resources :users , only: %i[show]
+  # Nester bookings ?
 end

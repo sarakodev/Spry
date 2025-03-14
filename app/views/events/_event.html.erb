@@ -1,14 +1,16 @@
-<div class="container-card">
-  <% if event.photo.attached? %>
-    <%= cl_image_tag event.photo.key, class: "card-dashboard-img" %>
-  <% else %>
-    <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741778812/Design_sans_titre-5_lbuads.png"  class= "card-dashboard-img" >
-  <% end %>
+<%= link_to event_path(event), class: "plain" do %>
+  <div class="container-card">
+    <% if event.photo.attached? %>
+      <%= cl_image_tag event.photo.key, class: "card-dashboard-img" %>
+    <% else %>
+      <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741778812/Design_sans_titre-5_lbuads.png"  class= "card-dashboard-img" >
+    <% end %>
 
 
-  <div class="container-info">
-    <div class="title-dash"><%= event.name %></div>
-    <div class="location"><%= event.location %></div>
+    <div class="container-info">
+      <div class="title-dash"><%= event.name %></div>
+      <div class="location"><%= event.location %></div>
+    </div>
+
   </div>
-
-</div>
+<% end %>
