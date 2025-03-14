@@ -38,9 +38,14 @@
 <% elsif @event.user == current_user %>
   <% @event.pending_bookings.each do |booking| %>
     <div class="button-status d-flex">
-      <p><%= booking.user.first_name %> wants to participate to your event</p>
-      <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn' %>
-      <%= button_to 'Decline', reject_booking_path(booking), method: :patch, class: 'btn' %>
+      <div class="container">
+        <div class="user-container">
+            <%= cl_image_tag booking.user.photo.key, class: "avatar-large" %>
+            <p><%= booking.user.first_name %> wants to participate</p>
+            <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn' %>
+            <%= button_to 'Decline', reject_booking_path(booking), method: :patch, class: 'btn' %>
+        </div>
+      </div>
     </div>
   <% end %>
 <% else %>
@@ -50,7 +55,7 @@
 <% end %>
 
 <% if @event.event_participants.empty? %>
-  <p>There are no participants yet.</p>
+  <%# <p class="mb-4">There are no participants yet.</p> %>
 <% else %>
   <% @event.event_participants.each do |user| %>
   <div class="container">
@@ -63,3 +68,4 @@
   </div>
   <% end %>
 <% end %>
+<div class="mb-8"></div>
