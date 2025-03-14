@@ -33,6 +33,33 @@
 </div>
 
 
-<div class="d-flex justify-content-center">
-  <%= render "bookings/form", booking: @booking, event: @event %>
-</div>
+<% if current_user.events_as_participant.include?(@event) %>
+  <p><%= current_user.bookings.find_by(event: @event).status %></p>
+<% elsif @event.user == current_user %>
+  <% @event.pending_bookings.each do |booking| %>
+    <div class="button-status d-flex">
+      <p><%= booking.user.first_name %> wants to participate to your event</p>
+      <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn' %>
+      <%= button_to 'Decline', reject_booking_path(booking), method: :patch, class: 'btn' %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="d-flex justify-content-center">
+    <%= render "bookings/form", booking: @booking, event: @event %>
+  </div>
+<% end %>
+
+<% if @event.event_participants.empty? %>
+  <p>There are no participants yet.</p>
+<% else %>
+  <% @event.event_participants.each do |user| %>
+  <div class="container">
+    <div class="user-container">
+    <%= cl_image_tag user.photo.key, class: "avatar-large" %>
+      <div class="d-flex flex-column justify-content-center">
+        <p class="m-0" >Participant: <%= user.first_name %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
