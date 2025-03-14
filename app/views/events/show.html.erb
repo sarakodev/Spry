@@ -14,12 +14,12 @@
 <div class="container">
   <div class="event-show-card">
     <h2><strong><%= @event.name %></strong></h2>
-    <p> 📜 Description: <%= @event.description %></p>
     <p> 📅 Date and time: <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
     <p> 📍Location : <%= @event.location %></p>
-    <p> 🏃🏻‍➡️ Participants: <%= @event.participants %></p>
     <p> ⛽ Distance: <%= @event.kilometers %> km</p>
-    <p> 🏎️ Pace: <%= @event.pace %></p>
+    <p> ⌚ Pace: <%= @event.pace %></p>
+    <p> 📜 Description: <%= @event.description %></p>
+    <p> 🏃🏻 Number of participants: <%= @event.participants %></p>
   </div>
 </div>
 
@@ -27,7 +27,7 @@
   <div class="user-container">
     <%= cl_image_tag @event.user.photo.key, class: "avatar-large" %>
     <div class="d-flex flex-column justify-content-center">
-      <p class="m-0" >Organizer: <%= @event.user.first_name %></p>
+      <p class="m-0" >Organizer: <%= @event.user.fullname %></p>
     </div>
   </div>
 </div>
