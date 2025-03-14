@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save!
-      redirect_to events_path, notice: "Your event has been successfully created"
+      redirect_to @event, notice: "Your event has been successfully created"
     else
       render :new, status: :unprocessable_entity
     end
