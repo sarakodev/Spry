@@ -184,17 +184,4 @@ puts "created event"
 Booking.destroy_all
 puts "bookings destroyed"
 
-# Booking creation logic (remains unchanged)
-e = Booking.new(event_id: Event.first.id, user_id: User.fourth.id, status: 'Pending')
-e.save
-puts 'created a booking'
-
-f = Booking.new(event_id: Event.second.id, user_id: User.fifth.id, status: 'Accepted')
-f.save
-puts 'created a booking'
-
-g = Booking.new(event_id: Event.third.id, user_id: User.last.id, status: 'Declined')
-g.save
-puts 'created a booking'
-
-puts "all done!"
+puts "all done, congratulations!"
