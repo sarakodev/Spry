@@ -6,7 +6,7 @@
 
 
   <div class="form-inputs">
-    <%= f.input :name, label: "Name", placeholder: "Michael", input_html: { class: "inputs"}  %>
+    <%= f.input :name, label: "title", placeholder: "afternoon run", input_html: { class: "inputs"}  %>
     <%= label_tag :datetime %>
     <%= f.datetime_local_field :datetime, class: "form-control inputs" %>
     <%= f.input :description, label: "Description", placeholder: "Tell us the aim of this event (recovery run, split run...)", input_html: { class: "inputs"}, wrapper_html: { class: "mt-3"}  %>
@@ -24,4 +24,3 @@
   <%= f.button :submit, value: "Create my event", class: "ms-2 btn btn-flat"%>
 </div>
   <% end %>
-
