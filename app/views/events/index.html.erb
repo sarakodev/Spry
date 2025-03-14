@@ -29,8 +29,7 @@
           <div class="row align-items-center">
           <h3><strong><%= event.name %></strong></h3>
           <div class="col-5 d-flex flex-column">
-            <p class="event-date mb-0 text"><%= event.datetime.strftime("%B %d, %H:%M") %>
-            </p>
+            <p class="event-date mb-0 text"><%= event.datetime.strftime("%B %d, %I:%M %p") %></p>
           </div>
         <div class="col-5 d-flex align-items-center">
           <p class="event-location mb-0 text" >📍 <%= event.location %>
