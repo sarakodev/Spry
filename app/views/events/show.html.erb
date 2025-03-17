@@ -14,12 +14,12 @@
 <div class="container">
   <div class="event-show-card">
     <h2><strong><%= @event.name %></strong></h2>
-    <p> 📅 Date and time: <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
-    <p> 📍Location : <%= @event.location %></p>
-    <p> ⛽ Distance: <%= @event.kilometers %> km</p>
-    <p> ⌚ Pace: <%= @event.pace %></p>
-    <p> 📜 Description: <%= @event.description %></p>
-    <p> 🏃🏻 Number of participants: <%= @event.participants %></p>
+    <p> 📅 : <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
+    <p> 📍: <%= @event.location %></p>
+    <p> ⛽ : <%= @event.kilometers %> km</p>
+    <p> ⌚ : <%= @event.pace %></p>
+    <p> 📜 : <%= @event.description %></p>
+    <p> 🏃🏻 : <%= @event.participants %></p>
   </div>
 </div>
 
