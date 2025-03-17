@@ -27,12 +27,17 @@ Rails.application.routes.draw do
     end
   end
 
+  # Challenges
+  resources :challenges, only: %i[show]
+
+  # Defines the challenges page
+  get 'challenges', to: 'challenges#challenges'
+
   # Users
   resources :users , only: %i[show]
-
+  
+  # Chatroom
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
-
-  resources :
 end
