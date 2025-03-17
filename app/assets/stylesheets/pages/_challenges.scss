@@ -1,0 +1,27 @@
+.challenge-navigation {
+  background-color: white;
+  height: 3em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.challenge-title {
+  border-radius: 11px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 21px;
+  background-color: #780245;
+  color: white;
+  width: 250px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}

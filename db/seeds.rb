@@ -343,8 +343,31 @@ event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/uplo
 event.save!
 puts "created event"
 
-
 Booking.destroy_all
 puts "bookings destroyed"
+
+Participation.destroy_all
+puts "participations destroyed"
+
+Challenge.destroy_all
+puts "challenges destroyed"
+
+challenge = Challenge.create(
+  title: "Run from Paris to Marseille together",
+  category: "Distance challenge",
+  team_name: "Team Chacha 🐈",
+  start_point: "Paris, France",
+  end_point: "Marseille, France"
+)
+challenge.save!
+puts "created a distance challenge"
+
+participation = Participation.create(
+  distance: 10,
+  user_id: User.first.id,
+  challenge_id: Challenge.first.id
+)
+participation.save!
+puts "created a participation"
 
 puts "all done, congratulations!"
