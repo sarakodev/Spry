@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   # Bookings
   resources :bookings do
-    resources :bookings, only: :index
     member do
       patch :accept
       patch :reject
@@ -29,5 +28,9 @@ Rails.application.routes.draw do
 
   # Users
   resources :users , only: %i[show]
+
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: :create
+  end
   # Nester bookings ?
 end
