@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   end
 
   # Challenges
-  resources :challenges, only: %i[show]
+  resources :challenges, only: %i[show new create]
+
 
   # Defines the challenges page
   get 'challenges', to: 'challenges#challenges'
@@ -40,4 +41,6 @@ Rails.application.routes.draw do
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
+  
+  
 end
