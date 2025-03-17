@@ -10,7 +10,9 @@
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
-    padding: 1rem;
+    padding: 0.5rem;
+    margin-left: 45px;
+    text-align: left;
   }
 
   .messages {
@@ -42,7 +44,7 @@
   }
 
   .message-content {
-    border-radius: 1rem;
+    border-radius: 15px;
     margin-bottom: 1rem;
     padding: 0.5rem;
     max-width: 70%;
@@ -51,13 +53,19 @@
   }
 
   .message.sent .message-content {
-    align-self: flex-start;
-    background: $blue;
+    align-self: flex-end;
+    background: #780245;
     color: $light-gray;
   }
 
   .message.received .message-content {
-    align-self: flex-end;
+    align-self: flex-start;
     background: $gray-200;
+  }
+
+  textarea.form-control {
+    border-radius: 15px;
+    width: 245px;
+    min-height: calc(1.5em + 0.75rem + calc(var(--bs-border-width)* 2));
   }
 }

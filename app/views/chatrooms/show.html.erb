@@ -1,5 +1,8 @@
 <div class="container chat">
-  <h1>Your chat with <%= @chatroom.first_user == current_user ? @chatroom.second_user.first_name : @chatroom.first_user.first_name %></h1>
+  <h1>@<%= @chatroom.first_user == current_user ? @chatroom.second_user.first_name : @chatroom.first_user.first_name %></h1>
+    <%= link_to events_path, class: 'return-btn' do %>
+      <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
+    <% end %>
     <%= turbo_stream_from "chatrooms_#{@chatroom.id}" %>
 
     <div id="messages" class="messages">
