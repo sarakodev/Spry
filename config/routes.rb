@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   # Bookings
+  resources :bookings, only: [:show]
   resources :bookings do
     member do
       patch :accept
