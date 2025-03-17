@@ -28,11 +28,11 @@ Rails.application.routes.draw do
   end
 
   # Users
-  resources :users , only: %i[show]
+  resources :users, only: %i[show]
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
 
-  resources :
+  resources :challenges, only: %i[new create]
 end

@@ -3,8 +3,8 @@ class Challenge < ApplicationRecord
 
   has_many :users, through: :participations, dependent: :destroy
 
-  validates :name, presence: true
-  validates :type, presence: true, inclusion: { in: CATEGORIES }
-  validates :team, presence: true
+  validates :title, presence: true
+  validates :category, presence: true, inclusion: { in: CATEGORIES }
+  validates :team_name, presence: true
 
 end
