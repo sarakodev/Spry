@@ -2,6 +2,10 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
+Message.destroy_all
+puts "msg detroyed"
+Chatroom.destroy_all
+puts "chatrooms destroyed"
 User.destroy_all
 puts "users destroyed"
 
@@ -343,8 +347,31 @@ event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/uplo
 event.save!
 puts "created event"
 
-
 Booking.destroy_all
 puts "bookings destroyed"
+
+Participation.destroy_all
+puts "participations destroyed"
+
+Challenge.destroy_all
+puts "challenges destroyed"
+
+challenge = Challenge.create(
+  title: "Run from Paris to Marseille together",
+  category: "Distance challenge",
+  team_name: "Team Chacha 🐈",
+  start_point: "Paris, France",
+  end_point: "Marseille, France"
+)
+challenge.save!
+puts "created a distance challenge"
+
+participation = Participation.create(
+  distance: 10,
+  user_id: User.first.id,
+  challenge_id: Challenge.first.id
+)
+participation.save!
+puts "created a participation"
 
 puts "all done, congratulations!"
