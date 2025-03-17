@@ -16,7 +16,7 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body>
+  <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <% unless controller_name == 'pages' || controller_name == "registrations" || controller_name == "sessions" %>
       <%= render "shared/navbar" %>
     <% end %>
