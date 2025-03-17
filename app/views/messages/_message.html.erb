@@ -3,7 +3,7 @@
     class="message <%= message.user === user ? 'sent' : 'received' %>"
     data-controller="message"
     data-message-user-id-value="<%= message.user.id %>">
-  <small class="message-info">
+  <small class="message-info w-100">
     <strong><%= message.user.first_name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
