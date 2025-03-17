@@ -30,6 +30,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @booking = Booking.new
+    @bookings = @event.bookings.where(user: current_user)
 
     if @event.nil?
       redirect_to events_path, alert: "Event not found"
