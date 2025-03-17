@@ -18,3 +18,27 @@
 .user-container p {
   opacity: .8;
 }
+
+.status-container {
+  border-top: 1px solid #FF5400 ;
+  border-bottom: 1px solid #FF5400 ;
+  margin-bottom: 20px;
+  height: 10vh;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+
+.status-container p {
+  opacity: .8;
+}
+
+.orange {
+  color:#FF5400;
+}
+
+.purple {
+  color:#780245;
+}
