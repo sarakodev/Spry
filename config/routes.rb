@@ -27,7 +27,12 @@ Rails.application.routes.draw do
     end
   end
 
+  # Challenges
+  resources :challenges, only: %i[show]
+
+  # Defines the challenges page
+  get 'challenges', to: 'challenges#challenges'
+
   # Users
-  resources :users , only: %i[show]
-  # Nester bookings ?
+  resources :users, only: %i[show]
 end
