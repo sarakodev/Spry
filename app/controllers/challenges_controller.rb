@@ -11,6 +11,15 @@ class ChallengesController < ApplicationController
       render 'challenges/index', status: :unprocessable_entity
     end
   end
+  
+  def show
+    @challenge = Challenge.find(params[:id])
+    @participation = Participation.new
+  end
+
+  def challenges
+    @challenges = current_user.challenges
+  end
 
   private
 

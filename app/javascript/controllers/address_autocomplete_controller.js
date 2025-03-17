@@ -9,7 +9,6 @@ export default class extends Controller {
 
   connect() {
     console.log('hello');
-    
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,postcode,locality,neighborhood,address"
@@ -29,7 +28,5 @@ export default class extends Controller {
 
   disconnect() {
     this.geocoder.onRemove()
-    console.log("coucou  ");
-
   }
 }
