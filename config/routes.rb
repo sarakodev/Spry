@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   end
 
   # Bookings
+  resources :bookings, only: [:show]
   resources :bookings do
-    resources :bookings, only: :index
     member do
       patch :accept
       patch :reject
@@ -34,5 +34,10 @@ Rails.application.routes.draw do
   get 'challenges', to: 'challenges#challenges'
 
   # Users
-  resources :users, only: %i[show]
+  resources :users , only: %i[show]
+  
+  # Chatroom
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: :create
+  end
 end

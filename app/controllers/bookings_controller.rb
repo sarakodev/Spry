@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
 
   def accept
     if @booking.accept!
+      create_or_find_chatroom(@booking)
       redirect_to @booking.event, notice: 'Registration accepted.'
     else
       redirect_to @booking.event, alert: 'Error: registration could not be accepted'
@@ -38,6 +39,13 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def create_or_find_chatroom(booking)
+    chatroom = Chatroom.find_by(first_user: current_user, second_user: booking.user) || Chatroom.find_by(first_user: booking.user, second_user: current_user)
+    return if chatroom
+
+    Chatroom.create(first_user: current_user, second_user: booking.user)
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])

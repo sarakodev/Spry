@@ -89,7 +89,7 @@ base_time += 3.days # 3 days later
 
 event = Event.create(
   name: "Nighttime Challenge",
-  location: "Rue de Rivoli",
+  location: "Rue de Rivoli, Paris",
   datetime: base_time.change(hour: 19, min: 30), # Late evening
   pace: 6.0,
   participants: 8,
@@ -105,7 +105,7 @@ base_time += 2.days # 5 days from now
 
 event = Event.create(
   name: "Early Morning Loop",
-  location: "Parc des Tuileries",
+  location: "Jardin-des-Plantes, Paris",
   datetime: base_time.change(hour: 7, min: 0), # Early morning
   pace: 6.2,
   participants: 3,
@@ -121,7 +121,7 @@ base_time += 1.week # 1 week later
 
 event = Event.create(
   name: "Social Sunday Run",
-  location: "Ile Saint-Louis",
+  location: "Ile Saint-Louis, Paris",
   datetime: base_time.change(hour: 10, min: 30), # Sunday morning
   pace: 6.7,
   participants: 6,
@@ -137,7 +137,7 @@ base_time += 4.days # 4 days later
 
 event = Event.create(
   name: "Museum Run",
-  location: "Musée d'Orsay",
+  location: "Musée d'Orsay, Paris",
   datetime: base_time.change(hour: 8, min: 0), # Early morning again
   pace: 6.3,
   participants: 10,
@@ -169,7 +169,7 @@ base_time += 5.days # 12 days later
 
 event = Event.create(
   name: "Marathon Prep",
-  location: "Parc Monceau",
+  location: "Parc Monceau, Paris",
   datetime: base_time.change(hour: 6, min: 30), # Early morning
   pace: 5.5,
   participants: 7,
@@ -180,6 +180,169 @@ event = Event.create(
 event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1741864221/9_owkh30.png'), filename: 'run7.jpg', content_type: 'image/jpg')
 event.save!
 puts "created event"
+
+
+
+base_time += 2.days # 14 days later
+
+event = Event.create(
+  name: "Seine Sunrise Run",
+  location: "Quai de la Tournelle",
+  datetime: base_time.change(hour: 6, min: 45),
+  pace: 5.8,
+  participants: 4,
+  user: User.fourth,
+  description: "A peaceful run along the Seine at sunrise.",
+  kilometers: 7.0
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204011/15_uvyxcl.png'), filename: 'run11.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 3.days # 17 days later
+
+event = Event.create(
+  name: "Fun Run",
+  location: "Cour Napoléon",
+  datetime: base_time.change(hour: 20, min: 0),
+  pace: 6.2,
+  participants: 5,
+  user: User.fifth,
+  description: "A night run around the Louvre with city lights.",
+  kilometers: 6.5
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204011/14_ejw532.png'), filename: 'run12.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 4.days # 21 days later
+
+event = Event.create(
+  name: "Morning Dash",
+  location: "Bois de Vincennes",
+  datetime: base_time.change(hour: 7, min: 15),
+  pace: 5.3,
+  participants: 6,
+  user: User.last,
+  description: "A quick-paced morning run in the Bois de Vincennes.",
+  kilometers: 5.8
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/17_aa4to8.png'), filename: 'run13.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 2.days # 23 days later
+
+event = Event.create(
+  name: "Eiffel Tower Sprint",
+  location: "Champ de Mars, Paris",
+  datetime: base_time.change(hour: 18, min: 30),
+  pace: 4.9,
+  participants: 8,
+  user: User.second,
+  description: "Fast intervals near the Eiffel Tower.",
+  kilometers: 6.2
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/18_ak7g4q.png'), filename: 'run14.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 5.days # 28 days later
+
+event = Event.create(
+  name: "Track Running",
+  location: "1 Avenue Pierre De Coubertin, Paris",
+  datetime: base_time.change(hour: 9, min: 0),
+  pace: 4.5,
+  participants: 5,
+  user: User.second,
+  description: "Interval training, all levels are welcome.",
+  kilometers: 8.0
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/20_oyfeii.png'), filename: 'run15.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 3.days # 31 days later
+
+event = Event.create(
+  name: "Hill Climb Challenge",
+  location: "Butte Montmartre, Paris",
+  datetime: base_time.change(hour: 17, min: 45),
+  pace: 7.1,
+  participants: 7,
+  user: User.third,
+  description: "Steep hill sprints for strength and endurance.",
+  kilometers: 5.0
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204580/Design_sans_titre-5_wcmiix.png'), filename: 'run16.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 6.days # 37 days later
+
+event = Event.create(
+  name: "Sunset River Run",
+  location: "Pont Alexandre III",
+  datetime: base_time.change(hour: 19, min: 0),
+  pace: 6.0,
+  participants: 6,
+  user: User.fourth,
+  description: "A scenic sunset run along the Seine.",
+  kilometers: 9.2
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1741864223/11_ezrka5.png'), filename: 'run17.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 2.days # 39 days later
+
+event = Event.create(
+  name: "Park Trail Run",
+  location: "Parc de Sceaux",
+  datetime: base_time.change(hour: 8, min: 30),
+  pace: 5.9,
+  participants: 9,
+  user: User.fifth,
+  description: "Trail running session in a natural park.",
+  kilometers: 10.0
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/19_mshbip.png'), filename: 'run18.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 4.days # 43 days later
+
+event = Event.create(
+  name: "Marathon Training",
+  location: "Bois de Boulogne, Paris",
+  datetime: base_time.change(hour: 7, min: 0),
+  pace: 5.6,
+  participants: 10,
+  user: User.last,
+  description: "Long-distance run for marathon prep.",
+  kilometers: 18.0
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/21_n2wc0k.png'), filename: 'run19.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
+base_time += 1.week # 50 days later
+
+event = Event.create(
+  name: "Weekly Track",
+  location: "Stade Alain Mimoun",
+  datetime: base_time.change(hour: 19, min: 30),
+  pace: 4.5,
+  participants: 4,
+  user: User.first,
+  description: "Intense sprint session for speed improvement.",
+  kilometers: 4.5
+)
+event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204013/22_eremtt.png'), filename: 'run20.jpg', content_type: 'image/jpg')
+event.save!
+puts "created event"
+
 
 Booking.destroy_all
 puts "bookings destroyed"
