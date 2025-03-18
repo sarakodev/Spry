@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :events, dependent: :destroy # As an organizer
   has_many :bookings, dependent: :destroy
-  has_many :participations
+  has_many :participations, dependent: :destroy
   has_many :challenges, through: :participations
   has_many :owned_challenges, class_name: "Challenge"
   has_many :events_as_participant, through: :bookings, source: :event

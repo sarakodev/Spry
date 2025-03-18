@@ -1,0 +1,58 @@
+.summary-container {
+  display: flex;
+  justify-content: space-between; /* Espacement entre les cartes */
+  gap: 10px; /* Espacement entre les éléments flex */
+  margin-top: 20px;
+  padding: 0 10px; /* Ajoutez un padding pour éviter que les cartes touchent les bords */
+}
+
+.card {
+  flex: 1; /* Permet aux cartes de s'étendre pour remplir l'espace disponible */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.distance-card {
+  background-color: #ffe6f0; /* Couleur de fond pour la carte de distance */
+}
+
+.steps-card {
+  background-color: #fff0e6; /* Couleur de fond pour la carte de pas */
+}
+
+.card-icon img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-value {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-challenge-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  flex-direction: row;
+}
