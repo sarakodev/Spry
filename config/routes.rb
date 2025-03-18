@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   # Challenges
   resources :challenges, only: %i[show new create]
+  resources :participations, only: [:update]
 
   # Defines the challenges page
   get 'challenges', to: 'challenges#challenges'
