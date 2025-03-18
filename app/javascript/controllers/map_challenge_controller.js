@@ -97,9 +97,11 @@ export default class extends Controller {
       const start = this.markersValue[0];
       const end = this.markersValue[1];
 
+
       const progressLng = start.lng + (end.lng - start.lng) * this.progressValue;
       const progressLat = start.lat + (end.lat - start.lat) * this.progressValue;
-
+      console.log(progressLat);
+      
       if (this.progressMarker) {
         this.progressMarker.setLngLat([progressLng, progressLat]);
       } else {
