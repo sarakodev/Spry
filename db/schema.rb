@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2025_03_18_103042) do
-=======
-ActiveRecord::Schema[7.1].define(version: 2025_03_18_100117) do
->>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,15 +64,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_100117) do
     t.string "start_point"
     t.string "end_point"
     t.string "team_name"
-<<<<<<< HEAD
     t.float "start_latitude"
     t.float "start_longitude"
     t.float "end_latitude"
     t.float "end_longitude"
-=======
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_challenges_on_user_id"
->>>>>>> master
   end
 
   create_table "chatrooms", force: :cascade do |t|
