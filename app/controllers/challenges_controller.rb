@@ -18,10 +18,18 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     # @participation = Participation.new
-    @participation = @challenge.participations.first
+    @participation = @challenge.participations.find_by(user: current_user, challenge: @challenge)
     @markers = [
-      { lat: @challenge.start_latitude, lng: @challenge.start_longitude },
-      { lat: @challenge.end_latitude, lng: @challenge.end_longitude }
+      {
+        lat: @challenge.start_latitude,
+        lng: @challenge.start_longitude,
+        marker_html: render_to_string(partial: "marker_start")
+      },
+      {
+        lat: @challenge.end_latitude,
+        lng: @challenge.end_longitude,
+        marker_html: render_to_string(partial: "marker_end")
+      }
     ]
   end
 

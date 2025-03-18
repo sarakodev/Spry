@@ -9,13 +9,14 @@
           data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
           data-map-challenge-show-controls-value="false"
           data-map-challenge-show-popup-value="false"
-          data-map-challenge-zoom-map-value="true">
+          data-map-challenge-zoom-map-value="true"
+          data-map-challenge-progress-value="<%=  @challenge.completion %>">
         </div>
       </div>
-      <div class="progress-container">
-        <div class="challenge-name-index">10%</div>
+      <div class="progress-container-all">
+        <%# <div class="challenge-name-index">10%</div>
         <div class="challenge-name-index">PROGRESSION BAR</div>
-        <div class="challenge-name-index">10km out of 100km</div>
+        <div class="challenge-name-index">10km out of 100km</div> %>
       </div>
         <div class="summary-container w-100">
         <div class="card-challenge-container">
