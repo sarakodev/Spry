@@ -4,8 +4,8 @@
   <p class="description-welcome">Spry connects thousands of athletic people like you to practice your favorite sport together.</p>
   <h2 class="title-question">What would you like to do?</h2>
   <div class="buttons">
-    <%= link_to 'Join an event', events_path, class: 'btn btn-bk btn-purple mx-auto mb-4' %>
-    <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-purple mx-auto mb-5' %>
+    <%= link_to 'Join an event', events_path, class: 'btn btn-bk btn-welcome mx-auto mb-4' %>
+    <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-welcome mx-auto mb-5' %>
   </div>
 
   <%= simple_form_for :search, url: events_path, method: :get do |f| %>
@@ -15,4 +15,3 @@
   <%= f.button :submit %>
   <% end %>
 </div>
- 

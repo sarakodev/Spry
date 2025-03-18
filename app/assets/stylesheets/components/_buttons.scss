@@ -1,15 +1,3 @@
-.btn-bk {
-  display: block;
-  width: 70%;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #000000;
-  transition: 0.3s ease;
-  font-size: 16px;
-}
-
 .btn-bk:hover {
   background: #3D3D3D;
 }
@@ -64,4 +52,28 @@
   border: none;
   font-size: 25px;
   font-weight: 500;
+}
+
+.btn-bk {
+  display: block;
+  width: 70%;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #000000 !important;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-welcome {
+  display: block;
+  width: 70%;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #780245 !important;
+  transition: 0.3s ease;
+  font-size: 16px;
 }
