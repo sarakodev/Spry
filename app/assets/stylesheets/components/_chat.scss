@@ -144,10 +144,14 @@
     text-decoration: none;
   }
 
-  .message-apercu {
+  #exctracted-message {
     font-size: 16px;
-    color: #00ff15;
-    text-decoration: none;
+    color: #666;
     margin-bottom: 1px;
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

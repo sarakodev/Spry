@@ -11,7 +11,7 @@
               <%= cl_image_tag other_user.photo.key, class: "avatar-large" %>
               <div class="d-flex flex-column justify-content-center">
                   <p class="m-0" ><%= other_user.first_name %></p>
-                  <p id="ta-race"><%= chatroom.messages.last.content %></p>
+                  <p id="exctracted-message">"<%= chatroom.messages.last&.content.truncate(30) %>"</p>
               </div>
             </div>
           </div>
