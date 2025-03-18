@@ -5,19 +5,16 @@
     </div>
   </div>
 
-<div class="container-card-challenge-details">
-  <div class="dashboard-container">
-    <% if @challenges.any? %>
-      <% @challenges.each do |challenge| %>
-        <%= render "challenges/challenge", challenge: challenge %>
-        <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true  %>
-  <%# <div class="container-card-challenge-details"> %>
+  <div class="container-card-challenge-details">
+    <div class="dashboard-container">
       <% if @challenges.any? %>
         <% @challenges.each do |challenge| %>
           <%= render "challenges/challenge", challenge: challenge %>
+          <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
         <% end %>
       <% else %>
-      <%= render "challenges/new_challenge"%>
+        <%= render "challenges/new_challenge" %>
       <% end %>
+    </div>
   </div>
-<%# </div> %>
+</div>

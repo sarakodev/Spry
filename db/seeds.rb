@@ -362,7 +362,7 @@ challenge = Challenge.create(
   team_name: "Team Chacha 🐈",
   start_point: "Paris, France",
   end_point: "Marseille, France",
-  distance: 800
+  distance: 800,
   user_id: User.first.id,
 )
 challenge.save!
