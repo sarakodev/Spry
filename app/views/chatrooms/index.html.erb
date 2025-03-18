@@ -1,8 +1,17 @@
 <div class="container-inbox">
   <h2>Inbox</h2>
-    <%= link_to chatrooms_path, class: 'return-btn-inbox' do %>
+    <%= link_to events_path, class: 'return-btn-inbox' do %>
       <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
     <% end %>
+      <% if @chatrooms.empty? %>
+        <div>
+          <h3 class="no-friend">No new chats here...</h3>
+          <div class="gif-container">
+            <iframe src="https://giphy.com/embed/cXFBjz9OoNScNGE5Lb" class="giphy-ms"></iframe>
+          </div>
+          <div class="go-chat-container">Pick an event first to chat with someone 😉</div>
+        </div>
+      <% else %>
       <% @chatrooms.each do |chatroom| %>
         <%= link_to chatroom_path(chatroom) do%>
           <div class="container">
@@ -15,6 +24,7 @@
               </div>
             </div>
           </div>
+          <% end %>
         <% end %>
       <% end %>
 </div>

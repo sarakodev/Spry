@@ -17,6 +17,8 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
+    # @participation = Participation.new
+    @participation = @challenge.participations.first
     @markers = [
       {
         lat: @challenge.start_latitude,

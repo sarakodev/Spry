@@ -1,10 +1,11 @@
 <div class="container">
  <%= render "challenges/navigation_back_logout" %>
 
-  <div class="challenges-details">
-    <h1 class="challenge-title">Summary</h1>
+  <div class="container-card-challenge-details-show">
+  
+    <h1 class="summary-title">Summary</h1>
+    <%= render "challenges/challenge_details", challenge: @challenge %>
+    <%= render "shared/nav_progression", participation: @challenge.participations.first, challenge: @challenge, simple: false %>
   </div>
-
-  <%= render "challenges/challenge_details", challenge: @challenge %>
 
 </div>

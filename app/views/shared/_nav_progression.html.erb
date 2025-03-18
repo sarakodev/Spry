@@ -1,0 +1,22 @@
+  <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round(2) %>
+
+  <div class="progress-wrapper">
+    <div class="progress-container">
+      <div class="progress-bar" style="width: <%= progress_percentage %>%;">
+      </div>
+    </div>
+
+    <% unless simple %>
+    <span><%= progress_percentage %>%</span>
+      <p class="progress-text"><%= participation.distance %> km sur <%= challenge.distance %> km</p>
+      
+      <%= form_with model: participation, local: true do |f| %>
+        <div>
+          <%= f.label :distance, "Mettre à jour la distance parcourue" %>
+          <%= f.number_field :distance, min: 0, max: challenge.distance %>
+        </div>
+        <%= f.submit "Mettre à jour" %>
+      <% end %>
+    <% end %>
+  </div>
+
