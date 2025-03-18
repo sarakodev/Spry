@@ -7,8 +7,9 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new(challenge_params)
     @challenge.user = current_user
 
-    if @challenge.save!
-      redirect_to "/challenges", notice: "Your new challenge just started!"
+    if @challenge.save
+      Participation.create(user_id: current_user.id, challenge_id: @challenge.id)
+      redirect_to challenge_path(@challenge), notice: "Your new challenge just started!"
     else
       render :new, status: :unprocessable_entity
     end
