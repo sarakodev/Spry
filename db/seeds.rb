@@ -361,7 +361,8 @@ challenge = Challenge.create(
   category: "Distance challenge",
   team_name: "Team Chacha 🐈",
   start_point: "Paris, France",
-  end_point: "Marseille, France"
+  end_point: "Marseille, France",
+  user_id: User.first.id,
 )
 challenge.save!
 puts "created a distance challenge"
