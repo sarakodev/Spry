@@ -17,10 +17,22 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
-    # @participation = Participation.new
     @markers = [
-      { lat: @challenge.start_latitude, lng: @challenge.start_longitude },
-      { lat: @challenge.end_latitude, lng: @challenge.end_longitude }
+      {
+        lat: @challenge.start_latitude,
+        lng: @challenge.start_longitude,
+        marker_html: render_to_string(partial: "marker_start")
+      },
+      {
+        lat: @challenge.end_latitude,
+        lng: @challenge.end_longitude,
+        marker_html: render_to_string(partial: "marker_end")
+      },
+      {
+        lat: @challenge.progress_latitude, # Assurez-vous que cette valeur est calculée ou disponible
+        lng: @challenge.progress_longitude, # Assurez-vous que cette valeur est calculée ou disponible
+        marker_html: render_to_string(partial: "marker_progress")
+      }
     ]
   end
 
