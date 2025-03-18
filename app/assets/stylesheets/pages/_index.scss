@@ -1,5 +1,12 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "challenge_show";
+@import "challenges";
+@import "new_challenge";
+@import "user_show";
+@import "welcome";
+@import "form_challenges";
+@import "event_show";
 
 .plain {
     text-decoration: none;

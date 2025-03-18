@@ -1,8 +1,9 @@
 <%= link_to challenge_path(challenge), class: "plain" do %>
-  <div class="container-card">
+  <div class="container-card-challenge-details">
+
     <div class="container-info">
-      <div class="title-dash"><%= challenge.team_name %></div>
-      <div class="title-dash"><%= challenge.title %></div>
+      <h1><%= challenge.team_name %></h1>
+      <h2><%= challenge.title %></h2>
     </div>
   </div>
 <% end %>
