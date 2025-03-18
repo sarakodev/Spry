@@ -1,18 +1,20 @@
 <div class="container-inbox">
   <h2>Inbox</h2>
-    <div class="container-chats">
+    <%= link_to chatrooms_path, class: 'return-btn-inbox' do %>
+      <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
+    <% end %>
       <% @chatrooms.each do |chatroom| %>
         <%= link_to chatroom_path(chatroom) do%>
           <div class="container">
-            <div class="user-container">
+            <div class="user-i-container">
             <% other_user = chatroom.first_user == current_user ? chatroom.second_user : chatroom.first_user %>
               <%= cl_image_tag other_user.photo.key, class: "avatar-large" %>
               <div class="d-flex flex-column justify-content-center">
                   <p class="m-0" ><%= other_user.first_name %></p>
+                  <p id="ta-race"><%= chatroom.messages.last.content %></p>
               </div>
             </div>
           </div>
         <% end %>
       <% end %>
-    </div>
 </div>
