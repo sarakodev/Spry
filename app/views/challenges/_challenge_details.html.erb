@@ -1,7 +1,46 @@
  <div class="container-card-challenge-details">
-    <div class="">
-      <div class="title-dash"><%= @challenge.team_name %></div>
-      <div class="title-dash"><%= @challenge.title %></div>
-      <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1742227950/Placeholder_map_f5lekk.png" label="PLACEHOLDER">
+    <div class="container-void w-100">
+      <div class="challenge-team-index"><%= @challenge.team_name %></div>
+      <div class="challenge-name-index"><%= @challenge.title %></div>
+      <div class="map-container">
+        <div style="height: 200px;"
+          data-controller="map-challenge"
+          data-map-challenge-markers-value="<%= @markers.to_json %>"
+          data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-challenge-show-controls-value="false"
+          data-map-challenge-show-popup-value="false"
+          data-map-challenge-zoom-map-value="true">
+        </div>
+      </div>
+      <div class="progress-container">
+        <div class="challenge-name-index">10%</div>
+        <div class="challenge-name-index">PROGRESSION BAR</div>
+        <div class="challenge-name-index">10km out of 100km</div>
+      </div>
+        <div class="summary-container w-100">
+        <div class="card-challenge-container">
+          <div class="card distance-card">
+            <div class="card-icon">
+              <!-- Icône de distance -->
+              <img src="path_to_distance_icon.svg" alt="Distance Icon">
+            </div>
+            <div class="card-content">
+              <span class="card-value">5 020 km</span>
+              <span class="card-label">Distance</span>
+            </div>
+          </div>
+
+          <div class="card steps-card">
+            <div class="card-icon">
+              <!-- Icône de pas -->
+              <img src="path_to_steps_icon.svg" alt="Steps Icon">
+            </div>
+            <div class="card-content">
+              <span class="card-value">6,2 M</span>
+              <span class="card-label">Steps</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    </div>

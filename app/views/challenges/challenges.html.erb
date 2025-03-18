@@ -1,17 +1,17 @@
 <div class="container">
-  <div class="title-container">
-    <h2 class="challenge-title">My Challenges</h2>
+  <div class="container-top">
+    <div class="title-container">
+      <h2 class="challenge-title">My Challenges</h2>
+    </div>
   </div>
-</div>
 
-<div class="container-card-challenge-details">
-  <div class="dashboard-container">
-    <% if @challenges.any? %>
-      <% @challenges.each do |challenge| %>
-        <%= render "challenges/challenge", challenge: challenge %>
+  <%# <div class="container-card-challenge-details"> %>
+      <% if @challenges.any? %>
+        <% @challenges.each do |challenge| %>
+          <%= render "challenges/challenge", challenge: challenge %>
+        <% end %>
+      <% else %>
+      <%= render "challenges/new_challenge"%>
       <% end %>
-    <% else %>
-     <%= render "challenges/new_challenge"%>
-    <% end %>
   </div>
-</div>
+<%# </div> %>
