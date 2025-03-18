@@ -1,6 +1,6 @@
 class Challenge < ApplicationRecord
   CATEGORIES = ["Distance challenge", "Duration challenge"]
-
+  has_many :participations
   has_many :users, through: :participations, dependent: :destroy
 
   validates :title, presence: true
