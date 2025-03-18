@@ -1,9 +1,18 @@
 <%= link_to challenge_path(challenge), class: "plain" do %>
   <div class="container-card-challenge-details">
-
-    <div class="container-info">
-      <h1><%= challenge.team_name %></h1>
-      <h2><%= challenge.title %></h2>
+    <div class="container-information">
+      <h1 class="challenge-team-index"><%= challenge.team_name %></h1>
+      <h6 class="challenge-name-index"><%= challenge.title %></h6>
+      <div class="map-container">
+        <div class="map" style="height: 200px;"
+          data-controller="map-challenge"
+          data-map-challenge-markers-value="<%= @markers.to_json %>"
+          data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-challenge-show-controls-value="false"
+          data-map-challenge-show-popup-value="false"
+          data-map-challenge-zoom-map-value="true">
+        </div>
+      </div>
     </div>
   </div>
 <% end %>

@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="title-container">
-    <h2 class="challenge-title">My Challenges</h2>
+  <div class="container-top">
+    <div class="title-container">
+      <h2 class="challenge-title">My Challenges</h2>
+    </div>
   </div>
-</div>
 
 <div class="container-card-challenge-details">
   <div class="dashboard-container">
@@ -10,9 +11,13 @@
       <% @challenges.each do |challenge| %>
         <%= render "challenges/challenge", challenge: challenge %>
         <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true  %>
+  <%# <div class="container-card-challenge-details"> %>
+      <% if @challenges.any? %>
+        <% @challenges.each do |challenge| %>
+          <%= render "challenges/challenge", challenge: challenge %>
+        <% end %>
+      <% else %>
+      <%= render "challenges/new_challenge"%>
       <% end %>
-    <% else %>
-     <%= render "challenges/new_challenge"%>
-    <% end %>
   </div>
-</div>
+<%# </div> %>
