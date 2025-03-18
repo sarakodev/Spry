@@ -8,7 +8,7 @@ export default class extends Controller {
     markers: Array,
     showControls: { type: Boolean, default: true },
     showPopup: { type: Boolean, default: true },
-    zoomMap: { type: Boolean, default: true }
+    zoomMap: { type: Boolean, default: true },
   }
   connect() {
     console.log(this.markersValue)
@@ -18,8 +18,11 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v12",
       zoom: 10
     })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+
+    this.map.on('load', () => {
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
+    });
 
     if (this.showControlsValue) {
       this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
@@ -41,19 +44,21 @@ export default class extends Controller {
       }
     });
   }
+
   #fitMapToMarkers() {
     if (this.zoomMapValue) {
-      // Zoom France
+      // Zoom France : true
       const bounds = new mapboxgl.LngLatBounds()
       this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
       this.map.fitBounds(bounds, { padding: 40, maxZoom: 10, duration: 0 })
     } else {
-      // Zoom Monde
+      // Zoom Monde : false
       const bounds = new mapboxgl.LngLatBounds()
       this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 5, duration: 0 })
     }
   }
+
   getMapInstance() {
     return this.map
   }

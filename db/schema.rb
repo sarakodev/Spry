@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_17_135317) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_18_103042) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_135317) do
     t.string "start_point"
     t.string "end_point"
     t.string "team_name"
+    t.float "start_latitude"
+    t.float "start_longitude"
+    t.float "end_latitude"
+    t.float "end_longitude"
   end
 
   create_table "chatrooms", force: :cascade do |t|

@@ -15,10 +15,19 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     # @participation = Participation.new
+    @markers = [
+      { lat: @challenge.start_latitude, lng: @challenge.start_longitude },
+      { lat: @challenge.end_latitude, lng: @challenge.end_longitude }
+    ]
   end
 
   def challenges
     @challenges = current_user.challenges
+    @markers = []
+    @challenges.each do |challenge|
+      @markers << { lat: challenge.start_latitude, lng: challenge.start_longitude }
+      @markers << { lat: challenge.end_latitude, lng: challenge.end_longitude }
+    end
   end
 
   private
