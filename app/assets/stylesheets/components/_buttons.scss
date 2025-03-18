@@ -50,5 +50,18 @@
 
 
 .btn-challenge {
-  
+
+}
+
+.return-btn-inbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 17px;
+  border-radius: 15px;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
 }
