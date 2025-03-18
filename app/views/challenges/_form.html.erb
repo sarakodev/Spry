@@ -3,16 +3,52 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :category, label: "Which challenge do you want to start?", prompt: "Choose your challenge", collection: Challenge::CATEGORIES, input_html: { class: "inputs"} %>
+    <div class="form-inputs" data-controller="field-input">
+      <%= f.input :category, label: "Which challenge do you want to start?",
+                  prompt: "Choose your challenge",
+                  collection: Challenge::CATEGORIES,
+                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggle" }
+                  } %>
+
       <%= f.input :start_point, label: "Starting point",
-      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-       <%= f.input :end_point, label: "Endpoint",
-      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-      <%= f.input :title, label: "Challenge name", placeholder: "From Paris to Marseille", input_html: { class: "inputs"} %>
-      <%= f.input :team_name, label: "Team name", placeholder: "Charlotte and Tom's team", input_html: { class: "inputs"} %>
+                  input_html: {data: { address_autocomplete_target: "address"}, class: "d-none" },
+                  wrapper_html: { style: "position: relative; z-index: 1000;",
+                  class: "d-none",
+                  data: { controller: "address-autocomplete",
+                  address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
+                  field_input_target: "togglableElement"}}
+
+                  %>
+
+      <%= f.input :end_point, label: "Endpoint",
+                  input_html: {data: { address_autocomplete_target: "address"}, class: "d-none"},
+                  wrapper_html: {
+                    class: "d-none",
+                    data: {
+                      controller: "address-autocomplete",
+                      address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
+                      field_input_target: "togglableElement"
+                    },
+                  }
+                  %>
+
+      <%= f.input :title, label: "Challenge name",
+                  placeholder: "From Paris to Marseille",
+                  input_html: { class: "inputs"} %>
+
+      <div class="form-group form-group-challenges">
+          <%= f.input :user_ids,
+                      label: "Who will you challenge?",
+                      label_method: :fullname,
+                      collection: User.where.not(id: current_user.id),
+                      as: :check_boxes,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+      </div>
+
+      <%= f.input :team_name, label: "Team name",
+                  placeholder: "Charlotte and Tom's team",
+                  input_html: { class: "inputs"} %>
     </div>
 
     <div class="form-actions form-actions-challenges">
