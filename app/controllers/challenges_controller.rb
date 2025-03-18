@@ -5,10 +5,12 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new(challenge_params)
-    if @challenge.save
-      redirect_to @challenge, notice: "Your new challenge just started!"
+    @challenge.user = current_user
+
+    if @challenge.save!
+      redirect_to "/challenges", notice: "Your new challenge just started!"
     else
-      render 'challenges/index', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -24,6 +26,6 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:category, :start_point, :end_point, :title, :team_name)
+    params.require(:challenge).permit(:category, :start_point, :end_point, :title, :team_name, user_ids: [])
   end
 end
