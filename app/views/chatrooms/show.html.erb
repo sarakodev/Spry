@@ -3,7 +3,8 @@
     <%= link_to chatrooms_path, class: 'return-btn' do %>
       <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
     <% end %>
-    <%= turbo_stream_from "chatrooms_#{@chatroom.id}" %>
+
+    <%= turbo_stream_from "chatrooms_#{@chatroom.id}_messages" %>
 
     <div id="messages" class="messages">
       <% @chatroom.messages.each do |message| %>
