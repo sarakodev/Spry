@@ -1,7 +1,7 @@
  <% total_distance = challenge.participations.sum(:distance) %>
- <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round(2) %>
- <div class="progress-percentage text-center mt-3 ">
-    <h3 class="text-center"><strong><%= progress_percentage.round %> %</strong></h3>
+ <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round %>
+ <div class="progress-percentage text-center mt-3">
+    <h3 class="text-center"><strong><%= progress_percentage %> %</strong></h3>
     <%= render 'challenges/progress_bar', challenge: @challenge, participation: participation %>
-    <p class="progress-distance"><%= total_distance.round %> km out of <%= challenge.distance.round %> km</p>
+    <p class="progress-distance">Goal: <%= challenge.distance.round %>km</p>
 </div>
