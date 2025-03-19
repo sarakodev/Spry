@@ -365,6 +365,15 @@ challenge = Challenge.create(
   distance: 800,
   user_id: User.first.id,
 )
+challenge = Challenge.create(
+  title: "Run from Paris to Marseille together",
+  category: "Distance challenge",
+  team_name: "Team Chacha 🐈",
+  start_point: "Paris, France",
+  end_point: "Marseille, France",
+  distance: 800,
+  user_id: User.first.id,
+)
 challenge.save!
 puts "created a distance challenge"
 
@@ -387,6 +396,26 @@ participation = Participation.create(
   distance: 100,
   user_id: User.fourth.id,
   challenge_id: Challenge.first.id
+)
+participation = Participation.create(
+  distance: 100,
+  user_id: User.first.id,
+  challenge_id: Challenge.second.id
+)
+participation = Participation.create(
+  distance: 100,
+  user_id: User.second.id,
+  challenge_id: Challenge.second.id
+)
+participation = Participation.create(
+  distance: 100,
+  user_id: User.third.id,
+  challenge_id: Challenge.second.id
+)
+participation = Participation.create(
+  distance: 100,
+  user_id: User.fourth.id,
+  challenge_id: Challenge.second.id
 )
 participation.save!
 puts "created a participation"
