@@ -37,3 +37,55 @@
   width: 110px;
   border-radius: 50%;
 }
+.participant-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.participant-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: -10px;
+  object-fit: cover;
+}
+
+.participant-avatar:first-child {
+  margin-left: 0;
+}
+.participant-avatars .participant-avatar:nth-child(1) {
+  z-index: 3;
+}
+
+.participant-avatars .participant-avatar:nth-child(2) {
+  z-index: 2;
+}
+
+.participant-avatars .participant-avatar:nth-child(3) {
+  z-index: 1;
+}
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.extra-count {
+  width: 25px;
+  height: 25px;
+  background-color: #6D0333; /* Couleur du badge */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+  position: relative;
+  z-index: 8;
+  margin-bottom: 15px;
+  margin-left: 3px;
+}
