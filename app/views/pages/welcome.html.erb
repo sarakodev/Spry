@@ -1,17 +1,17 @@
-<div class="welcome-page">
-<img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741786426/spry_pourpre_rond_aayhkf.png" alt="logo-spry-violet" class="logo-welcome mb-4">
+<div class="welcome-page" data-controller="submit-button">
+  <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741786426/spry_pourpre_rond_aayhkf.png" alt="logo-spry-violet" class="logo-welcome mb-4">
   <h2 class="title-welcome">Welcome to Spry</h2>
   <p class="description-welcome">Spry connects thousands of athletic people like you to practice your favorite sport together.</p>
-  <h2 class="title-question">What would you like to do?</h2>
-  <div class="buttons">
-    <%= link_to 'Join an event', events_path, class: 'btn btn-bk btn-welcome mx-auto mb-4' %>
-    <%= link_to 'Create an event', new_event_path, class: 'btn btn-bk btn-welcome mx-auto mb-5' %>
-  </div>
+
+  <h2 class="title-question">Where would you like to run?</h2>
 
   <%= simple_form_for :search, url: events_path, method: :get do |f| %>
-  <%= f.input :address, label: false,
-  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-  <%= f.button :submit %>
+    <%= f.input :address, label: false,
+                input_html: { data: { address_autocomplete_target: "address" },
+                              class: "d-none" },
+                wrapper_html: { data: {
+                              controller: "address-autocomplete",
+                              address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } } %>
+    <%= f.button :submit, 'Discover local events', class: "welcome-btn prevent-interaction", data: { submit_button_target: "submitButton" }  %>
   <% end %>
 </div>
