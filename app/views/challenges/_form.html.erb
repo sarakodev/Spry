@@ -7,7 +7,7 @@
       <%= f.input :category, label: "Which challenge do you want to start?",
                   prompt: "Choose your challenge",
                   collection: Challenge::CATEGORIES,
-                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggle" }
+                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleDistance" }
                   } %>
 
       <%= f.input :start_point, label: "Starting point",
@@ -15,10 +15,8 @@
                   wrapper_html: { style: "position: relative; z-index: 1000;",
                   class: "d-none",
                   data: { controller: "address-autocomplete",
-                  address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
-                  field_input_target: "togglableElement"}}
-
-                  %>
+                          address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
+                          field_input_target: "togglableElement"}} %>
 
       <%= f.input :end_point, label: "Endpoint",
                   input_html: {data: { address_autocomplete_target: "address"}, class: "d-none"},
@@ -29,12 +27,18 @@
                       address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
                       field_input_target: "togglableElement"
                     },
-                  }
-                  %>
+                  } %>
+
+      <%= f.input :duration, label: "How long will you run?",
+                  class: "d-none",
+                  prompt: "Choose your favorite TV show",
+                  collection: Challenge::DURATIONS,
+                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleDuration" }
+                  } %>
 
       <%= f.input :title, label: "Challenge name",
                   placeholder: "From Paris to Marseille",
-                  input_html: { class: "inputs"} %>
+                  input_html: { class: "inputs" } %>
 
       <div class="form-group form-group-challenges">
           <%= f.input :user_ids,
