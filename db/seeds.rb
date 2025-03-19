@@ -373,6 +373,11 @@ participation = Participation.create(
   user_id: User.first.id,
   challenge_id: Challenge.first.id
 )
+participation = Participation.create(
+  distance: 100,
+  user_id: User.second.id,
+  challenge_id: Challenge.first.id
+)
 participation.save!
 puts "created a participation"
 
