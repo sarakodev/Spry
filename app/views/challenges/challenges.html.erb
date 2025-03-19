@@ -10,15 +10,11 @@
   <div class="container-card-challenge-details">
     <div class="dashboard-container">
       <% if @challenges.any? %>
-        <%= link_to "challenges/new", class: 'challenge-btn-add' do %>
-          <i class="fa-solid fa-plus" style="color: #000000;"></i>
-        <% end %>
         <% @challenges.each do |challenge| %>
           <%= render "challenges/challenge", challenge: challenge %>
         <% end %>
     </div>
     </div>
-    <%# <%= link_to "Add a new challenge", new_challenge_path, class: "btn mt-5 mx-auto" %>
     <% else %>
       <%= render "challenges/new_challenge" %>
     <% end %>

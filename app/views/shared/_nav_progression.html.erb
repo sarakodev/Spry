@@ -1,5 +1,5 @@
   <% total_distance = challenge.participations.sum(:distance) %>
-  <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round(2) %>
+  <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100) %>
 
   <% unless simple %>
   <div class="progress-text">
@@ -8,7 +8,7 @@
   </div>
   <div class="container-new-distance">
     <%= form_with model: participation, local: true do |f| %>
-      <%= f.label :distance, "Add a new distance" %>
+      <%= f.label :distance, "Add a new run" %>
       <%= f.number_field :distance, min: 0, max: challenge.distance %>
       <div class="submit-distance"><%= f.submit "Update" %></div>
     <% end %>

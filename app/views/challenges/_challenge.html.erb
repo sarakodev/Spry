@@ -6,6 +6,7 @@
         <%= render "shared/profil_challenge", challenge: challenge%>
     </div>
       <h6 class="challenge-name-index"><%= challenge.title %></h6>
+      <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
        <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
       </div>
     </div>
