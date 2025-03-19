@@ -56,3 +56,38 @@
   gap: 10px;
   flex-direction: row;
 }
+
+.container-top {
+  background-color: #780245;
+  height: 250px;
+  width: 100%;
+}
+
+.My-Challenges-title {
+  font-weight: bold;
+  border-radius: 11px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: white;
+  width: 250px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.container-challenges-global {
+}
+
+.My-Challenges-title-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description-exercise {
+  color: white;
+  margin-bottom: 33px;
+}
