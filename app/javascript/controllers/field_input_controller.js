@@ -8,11 +8,25 @@ export default class extends Controller {
 
   static targets = ["togglableElement", "input"]
 
-  toggle() {
-    console.log("Hello from toggle")
+  toggleDistance() {
+    console.log("Hello from toggleDistance")
     console.log(this.inputTarget.value)
 
     if (this.inputTarget.value === "Distance challenge") {
+      this.togglableElementTargets.forEach((element)=> {
+        element.classList.remove('d-none');
+      })
+    }
+    else {
+      this.togglableElementTargets.forEach(element => element.classList.add('d-none'))
+    }
+  }
+
+  toggleDuration() {
+    console.log("Hello from toggleDuration")
+    console.log(this.inputTarget.value)
+
+    if (this.inputTarget.value === "Duration challenge") {
       this.togglableElementTargets.forEach((element)=> {
         element.classList.remove('d-none');
       })
