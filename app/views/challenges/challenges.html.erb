@@ -10,7 +10,7 @@
       <% if @challenges.any? %>
         <% @challenges.each do |challenge| %>
           <%= render "challenges/challenge", challenge: challenge %>
-          <%= render "shared/nav_progression", participation: challenge.participations, challenge: challenge, simple: true %>
+          <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
         <% end %>
       <% else %>
         <%= render "challenges/new_challenge" %>

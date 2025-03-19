@@ -5,7 +5,7 @@
   
     <h1 class="summary-title">Summary</h1>
     <%= render "challenges/challenge_details", challenge: @challenge %>
-    <%= render "shared/nav_progression", participation: @challenge.participations, challenge: @challenge, simple: false %>
+    <%= render "shared/nav_progression", participation: @challenge.participations.first, challenge: @challenge, simple: false %>
   </div>
 
 </div>
