@@ -10,20 +10,19 @@
 .progress-container {
     width: 80%;
     height: 10px;
-    background: gray; /* Fond sombre */
+    background: #decdd7; /* Fond sombre */
     border-radius: 10px;
     position: relative; /* Effet d'ombre */
   }
-  
+
   /* Barre de progression avec effet néon */
   .progress-bar {
     height: 100%;
     width: 0%;
-    background: black; /* Dégradé bleu-violet */
+    background: #780245; /* Dégradé bleu-violet */
     text-align: center;
     line-height: 20px;
     border-radius: 10px;
     min-width: 40px; /* Assure que le texte est toujours visible */
     white-space: nowrap;
   }
-  

@@ -16,10 +16,10 @@
     <h2><strong><%= @event.name %></strong></h2>
     <p> 📅 <%= @event.datetime.strftime("%A, %B %d, %Y at %I:%M %p")%></p>
     <p> 📍 <%= @event.location %></p>
-    <p> ⛽ <%= @event.kilometers %> km</p>
+    <p> 🎯 <%= @event.kilometers %> km</p>
     <p> ⌚ <%= @event.pace %> min/km</p>
     <p> 📜 <%= @event.description %></p>
-    <p> 🏃🏻 <%= @event.participants %></p>
+    <p> 🏃 <%= @event.participants %> participants</p>
   </div>
 </div>
 
