@@ -1,0 +1,7 @@
+<div class="container-new-distance mt-3">
+    <%= form_with model: participation, local: true do |f| %>
+        <%= f.label :distance, "New distance" %>
+        <%= f.number_field :distance, min: 0, max: challenge.distance %>
+        <%= f.button :submit %>
+    <% end %>
+</div>
