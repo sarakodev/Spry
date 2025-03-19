@@ -24,7 +24,8 @@
                 <i class="fa-solid fa-person-running"></i>
               </div>
               <div class="card-content">
-                <span class="card-value">5 020</span>
+                <% total_distance = challenge.participations.sum(:distance).round %>
+                <span class="card-value"><%= total_distance %></span>
                 <span class="card-label">Kilometers</span>
               </div>
             </div>
@@ -35,8 +36,11 @@
                <i class="fa-solid fa-stairs"></i>
               </div>
               <div class="card-content">
-                <span class="card-value">6,2 M</span>
-                <span class="card-label">Steps</span>
+                  <% total_distance = challenge.participations.sum(:distance).round %>
+                  <% total_steps = total_distance * 1500 %>
+                  <span class="card-value"><%= format_steps(total_steps) %></span>
+                  <span class="card-label">Steps</span>
+                </div>
               </div>
             </div>
           </div>
