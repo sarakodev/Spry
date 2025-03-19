@@ -11,14 +11,24 @@ export default class extends Controller {
   toggle() {
     console.log("Hello from toggle")
     console.log(this.inputTarget.value)
-    console.log(this.endTarget)
 
     if (this.inputTarget.value === "Distance challenge") {
       this.togglableElementTargets.forEach((element)=> {
         element.classList.remove('d-none');
       })
-    } else {
+    }
+    else {
       this.togglableElementTargets.forEach(element => element.classList.add('d-none'))
+    }
+
+  }
+
+  toggleField(event) {
+    // Vérifier si l'élément cliqué est l'input
+    if (event.target === this.inputTarget) {
+      this.togglableElementTargets.forEach((element) => {
+        element.classList.remove("d-none");
+      });
     }
   }
 }
