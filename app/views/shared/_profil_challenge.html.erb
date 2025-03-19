@@ -1,0 +1,20 @@
+<div class="participant-avatars">
+  <%= cl_image_tag challenge.user.photo.key, class: "participant-avatar" %>
+
+  <% 
+    second_participant = if challenge.user == current_user
+      challenge.participations.includes(:user).map(&:user).reject { |user| user == current_user }.first
+    else
+      current_user
+    end 
+  %>
+
+  <% if second_participant.present? %>
+    <%= cl_image_tag second_participant.photo.key, class: "participant-avatar" %>
+  <% end %>
+
+  <% extra_count = challenge.participations.count - 2 %>
+  <% if extra_count > 0 %>
+    <div class="extra-count">+<%= extra_count %></div>
+  <% end %>
+</div>
