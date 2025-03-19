@@ -173,7 +173,7 @@ base_time += 5.days # 12 days later
 
 event = Event.create(
   name: "Marathon Prep",
-  location: "Parc Monceau, Paris",
+  location: "35 Bd de Courcelles, 75008 Paris",
   datetime: base_time.change(hour: 6, min: 30), # Early morning
   pace: 5.5,
   participants: 7,
@@ -223,12 +223,12 @@ base_time += 4.days # 21 days later
 
 event = Event.create(
   name: "Morning Dash",
-  location: "Bois de Vincennes",
+  location: "Parc des Buttes-Chaumont",
   datetime: base_time.change(hour: 7, min: 15),
   pace: 5.3,
   participants: 6,
   user: User.last,
-  description: "A quick-paced morning run in the Bois de Vincennes.",
+  description: "A quick-paced morning run in the Buttes-Chaumont.",
   kilometers: 5.8
 )
 event.photo.attach(io: URI.open('https://res.cloudinary.com/dhyuv86iu/image/upload/v1742204012/17_aa4to8.png'), filename: 'run13.jpg', content_type: 'image/jpg')
