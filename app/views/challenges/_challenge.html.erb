@@ -6,17 +6,9 @@
         <%= render "shared/profil_challenge", challenge: challenge%>
     </div>
       <h6 class="challenge-name-index"><%= challenge.title %></h6>
-      
-      <div class="map-container">
-        <div class="map" style="height: 200px;"
-          data-controller="map-challenge"
-          data-map-challenge-markers-value="<%= @markers.to_json %>"
-          data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-challenge-show-controls-value="false"
-          data-map-challenge-show-popup-value="false"
-          data-map-challenge-zoom-map-value="true">
-        </div>
+       <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
       </div>
     </div>
   </div>
+</div>
 <% end %>

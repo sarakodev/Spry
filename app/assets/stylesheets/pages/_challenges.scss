@@ -43,8 +43,8 @@
   background: white;
   align-items: center;
   border-radius: 20px;
-  padding: 18px;
-  margin: 10px;
+  // padding: 18px;
+  // margin: 10px;
   justify-content: center;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .challenge-name-index {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: 500;
   line-height: 1.2;
@@ -69,4 +69,16 @@
   border-radius: 20px;
   padding: 18px;
   margin: 10px;
+}
+
+.challenge-btn-add {
+  position: absolute;
+  top: 675px;
+  left: 157px;
+  z-index: 1;
+  background-color: #fefefe;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
 }

@@ -5,8 +5,8 @@
   background: white;
   align-items: center;
   border-radius: 20px;
-  padding: 0px;
-  margin: 10px;
+  // padding: 0px;
+  // margin: 10px;
 }
 
 .title {
@@ -14,14 +14,18 @@
   font-weight: bold;
 }
 
-.summary-title  {
+.summary-title {
   text-align: center;
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 12px;
+  margin-top: 14px;
 }
 
 .progress-container {
   margin-top: 10px;
+}
+
+.container-new-distance {
+  
 }
