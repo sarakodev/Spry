@@ -1,23 +1,24 @@
- <div class="container-card-challenge-details">
-    <div class="container-void w-100">
-      <div class="challenge-team-index"><%= @challenge.team_name %></div>
-      <div class="challenge-name-index"><%= @challenge.title %></div>
-      <div class="map-container">
-        <div style="height: 200px;"
-          data-controller="map-challenge"
-          data-map-challenge-markers-value="<%= @markers.to_json %>"
-          data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-challenge-show-controls-value="false"
-          data-map-challenge-show-popup-value="false"
-          data-map-challenge-zoom-map-value="true"
-          data-map-challenge-progress-value="<%=  @challenge.completion %>">
+ <div class="container-void">
+  <div class="container-card-challenge-details">
+      <div class="container-void w-100">
+        <div class="challenge-team-index"><%= @challenge.team_name %></div>
+        <div class="challenge-name-index"><%= @challenge.title %></div>
+        <div class="map-container">
+          <div style="height: 200px;"
+            data-controller="map-challenge"
+            data-map-challenge-markers-value="<%= @markers.to_json %>"
+            data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            data-map-challenge-show-controls-value="false"
+            data-map-challenge-show-popup-value="false"
+            data-map-challenge-zoom-map-value="true"
+            data-map-challenge-progress-value="<%=  @challenge.completion %>">
+          </div>
         </div>
-      </div>
-      <div class="progress-container-all">
-        <%# <div class="challenge-name-index">10%</div>
-        <div class="challenge-name-index">PROGRESSION BAR</div>
-        <div class="challenge-name-index">10km out of 100km</div> %>
-      </div>
+        <div class="progress-container-all">
+          <%# <div class="challenge-name-index">10%</div>
+          <div class="challenge-name-index">PROGRESSION BAR</div>
+          <div class="challenge-name-index">10km out of 100km</div> %>
+        </div>
         <div class="summary-container w-100">
         <div class="card-challenge-container">
           <div class="card distance-card">
@@ -44,4 +45,4 @@
         </div>
       </div>
     </div>
-    </div>
+</div>
