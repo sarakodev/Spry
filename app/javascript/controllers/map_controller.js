@@ -26,7 +26,7 @@ export default class extends Controller {
 
     if (this.showControlsValue) {
       this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl }))
+        mapboxgl: mapboxgl, placeholder: "Search here" }))
     }
   }
   #addMarkersToMap() {

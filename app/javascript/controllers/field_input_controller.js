@@ -20,15 +20,5 @@ export default class extends Controller {
     else {
       this.togglableElementTargets.forEach(element => element.classList.add('d-none'))
     }
-
-  }
-
-  toggleField(event) {
-    // Vérifier si l'élément cliqué est l'input
-    if (event.target === this.inputTarget) {
-      this.togglableElementTargets.forEach((element) => {
-        element.classList.remove("d-none");
-      });
-    }
   }
 }
