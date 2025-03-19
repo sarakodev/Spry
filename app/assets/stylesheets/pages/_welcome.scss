@@ -15,15 +15,23 @@
 
 .description-welcome {
   font-size: 18px;
-  margin-bottom: 54px;
+  margin-bottom: 90px;
 }
 
 .logo-welcome {
   width: 50%;
+  margin-top: 2em;
 }
 
 .title-question {
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 1em;
   font-weight: bold;
+}
+.welcome-btn {
+  margin-top: 1em;
+}
+
+.prevent-interaction {
+  pointer-events: none;
 }
