@@ -3,8 +3,7 @@
     <%= link_to chatrooms_path, class: 'return-btn' do %>
       <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
     <% end %>
-
-    <%= turbo_stream_from "chatrooms_#{@chatroom.id}_messages" %>
+    <%= turbo_stream_from "chatrooms_#{@chatroom.id}" %>
 
     <div id="messages" class="messages">
       <% @chatroom.messages.each do |message| %>
@@ -24,7 +23,7 @@
           placeholder: "Message to #{other_user.first_name}",
           wrapper_html: {class: "flex-grow-1"}
         %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <%= f.submit "Send", class: "btn mb-3" %>
         <% end %>
     </div>
   </div>
