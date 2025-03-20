@@ -1,12 +1,12 @@
 <% if challenge.category == "Distance challenge" %>
-  <% @progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round %>
+  <% @progress_percentage = ((challenge.participations.map(&:distance).sum / challenge.distance) * 100).round %>
 <% else %>
-  <% @progress_percentage = ((participation.duration.to_f / challenge.duration.to_f) * 100) %>
+  <% @progress_percentage = ((challenge.participations.map(&:duration).sum / challenge.duration) * 100) %>
 <% end %>
 
 <div class="progress">
   <div class="progress-bar" role="progressbar"
-    style="width: <%= @progress_percentage %>;"
+    style="width: <%= @progress_percentage %>%;"
     aria-valuenow="<%= @progress_percentage %>"
     aria-valuemin="0" aria-valuemax="100">
   </div>
