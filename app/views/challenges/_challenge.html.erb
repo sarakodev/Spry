@@ -14,7 +14,19 @@
               <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
           </div>
             <div class="col-2 text-end">
-              <h3 class="progress-percentage mb-0 mr-2"><strong><%= @progress_percentage.round %> %</strong></h3>
+              <h3 class="progress-percentage mb-0 mr-2">
+                <strong>
+                  <%= if @progress_percentage.nil?
+                      0
+                    elsif @progress_percentage.is_a?(Float) && @progress_percentage.nan?
+                      0
+                    elsif @progress_percentage.is_a?(Numeric)
+                      @progress_percentage.round
+                    else
+                      0
+                    end %>%
+                </strong>
+              </h3>
             </div>
         </div>
       </div>
