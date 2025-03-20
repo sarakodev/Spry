@@ -17,7 +17,6 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
-    # @participation = Participation.new
     @participation = @challenge.participations.find_by(user: current_user, challenge: @challenge)
     @markers = [
       {
@@ -45,6 +44,6 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:category, :start_point, :end_point, :title, :team_name, user_ids: [])
+    params.require(:challenge).permit(:category, :start_point, :end_point, :duration, :title, :team_name, user_ids: [])
   end
 end

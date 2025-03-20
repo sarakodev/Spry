@@ -4,60 +4,61 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs" data-controller="field-input">
-      <%= f.input :category, label: "Which challenge do you want to start?",
+      <%= f.input :category,
+                  label: "Which challenge do you want to start?",
                   prompt: "Choose your challenge",
                   collection: Challenge::CATEGORIES,
-                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleFields"  }
-                              } %>
+                  input_html: { class: "inputs",
+                                data: { field_input_target: "input", action: "change->field-input#toggleFields" } } %>
 
-      <%= f.input :start_point, label: "Starting point",
-                  input_html: {data: { address_autocomplete_target: "address"}, class: "d-none" },
+      <%= f.input :start_point,
+                  label: "Starting point",
+                  input_html: { data: { address_autocomplete_target: "address" }, class: "d-none" },
                   wrapper_html: { style: "position: relative; z-index: 1000;",
-                  class: "d-none",
-                  data: { controller: "address-autocomplete",
-                          address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
-                          field_input_target: "togglableElementDistance"}
-                                } %>
+                                  class: "d-none",
+                                  data: { controller: "address-autocomplete",
+                                          address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
+                                          field_input_target: "togglableElementDistance" } } %>
 
-      <%= f.input :end_point, label: "Endpoint",
-                  input_html: {data: { address_autocomplete_target: "address"}, class: "d-none"},
-                  wrapper_html: {
-                    class: "d-none",
-                    data: {
-                      controller: "address-autocomplete",
-                      address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
-                      field_input_target: "togglableElementDistance"
-                     },
-                              } %>
+      <%= f.input :end_point,
+                  label: "Endpoint",
+                  input_html: { data: { address_autocomplete_target: "address" }, class: "d-none" },
+                  wrapper_html: { class: "d-none",
+                                  data: { controller: "address-autocomplete",
+                                          address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
+                                          field_input_target: "togglableElementDistance" } } %>
 
-      <%= f.input :duration, label: "How long will you run?",
-                  wrapper_html: { class: "d-none",data: { field_input_target: "togglableElementDuration" } },
+      <%= f.input :duration,
+                  label: "How long will you run?",
+                  wrapper_html: { class: "d-none", data: { field_input_target: "togglableElementDuration" } },
                   data: { field_input_target: "togglableElementDuration" },
                   prompt: "Choose your favorite TV show",
                   collection: Challenge::DURATIONS,
                   input_html: { class: "inputs" } %>
 
-      <%= f.input :title, label: "Challenge name",
-                  placeholder: "From Paris to Marseille",
+      <%= f.input :title,
+                  label: "Challenge name",
+                  placeholder: "Paris to Marseille, 'The Office' Sprint...",
                   input_html: { class: "inputs" } %>
 
       <div class="form-group form-group-challenges">
-          <%= f.input :user_ids,
-                      label: "Who will you challenge?",
-                      label_method: :fullname,
-                      collection: User.where.not(id: current_user.id),
-                      as: :check_boxes,
-                      input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item' %>
+        <%= f.input :user_ids,
+                    label: "Who will you challenge?",
+                    label_method: :fullname,
+                    collection: User.where.not(id: current_user.id),
+                    as: :check_boxes,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: "tag-item" %>
       </div>
 
-      <%= f.input :team_name, label: "Team name",
+      <%= f.input :team_name,
+                  label: "Team name",
                   placeholder: "Charlotte and Tom's team",
-                  input_html: { class: "inputs"} %>
+                  input_html: { class: "inputs" } %>
     </div>
 
     <div class="form-actions form-actions-challenges">
-      <%= f.button :submit, "Start now", class: "btn bouton-purple btn-challenge"%>
+      <%= f.button :submit, "Start now", class: "btn bouton-purple btn-challenge" %>
     </div>
   <% end %>
 </div>

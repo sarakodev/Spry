@@ -39,4 +39,10 @@ class Challenge < ApplicationRecord
     self.update(distance: Geocoder::Calculations.distance_between([self.start_latitude, self.start_longitude], [self.end_latitude, self.end_longitude]))
 
   end
+
+  # def set_duration
+  #   self.duration =
+  #   # Si self.duration == "The Office (US) - S1 | 2h30"
+  #   # Si self.duration == "The Office (US) - S1 | 2h30"
+  # end
 end
