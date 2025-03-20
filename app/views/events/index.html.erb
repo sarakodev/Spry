@@ -26,31 +26,35 @@
 
         <div class="container">
 
-          <div class="row align-items-center">
+        <div class="row align-items-start position-relative">
           <h3><strong><%= event.name %></strong></h3>
-          <div class="col-5 d-flex flex-column">
+          <div class="col-5 d-flex flex-column justify-content-center mt-3">
             <p class="event-date mb-0 text"><%= event.datetime.strftime("%B %d, %I:%M %p") %></p>
           </div>
-        <div class="col-5 d-flex align-items-center">
-          <p class="event-location mb-0 text" >📍 <%= event.location %>
-          </p>
-        </div>
-          <div class="col-5  d-flex align-items-center">
-            <p class="event-spots mb-0 text">
-              <strong><%= event.participants %></strong> participants
+          <div class="col-7 d-flex flex-column justify-content-center mt-3">
+            <p class="event-location mb-0 text text-wrap" >📍 <%= event.location %>
             </p>
-          </div>
-          <div class="col-4  d-flex align-items-center">
+           </div>
 
-            <p class="event-distance mb-0 text">
-              🎯 <%= event.kilometers %> km
-            </p>
+          <div class="d-flex my-3">
+            <div class="col-5 me-2 d-flex align-items-center">
+              <p class="event-spots mb-0 text">
+                <strong><%= event.participants %></strong> participants
+              </p>
+            </div>
+            <div class="col-7 ps-1  d-flex align-items-center">
+
+              <p class="event-distance mb-0 text">
+                🎯 <%= event.kilometers %> km
+              </p>
+            </div>
           </div>
-          <div class="col-auto text-end mb-0">
+          <div class="col-1 text-end mb-0 position-absolute" style="bottom: 10px; right: 35px;">
             <% if event.user.photo.attached? %>
-            <%= cl_image_tag event.user.photo.key, class: "rounded-circle event-avatar"%>
+            <%= cl_image_tag event.user.photo.key, class: "rounded-circle event-avatar mb-0"%>
             <% end %>
           </div>
+
         </div>
       </div>
     </div>

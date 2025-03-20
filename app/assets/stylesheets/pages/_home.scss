@@ -104,3 +104,8 @@ h3 {
   position: absolute;
   opacity: 0.2;
 }
+.event-date, .event-location {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
