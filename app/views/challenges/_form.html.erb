@@ -7,8 +7,8 @@
       <%= f.input :category, label: "Which challenge do you want to start?",
                   prompt: "Choose your challenge",
                   collection: Challenge::CATEGORIES,
-                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleDistance" }
-                  } %>
+                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleFields"  }
+                              } %>
 
       <%= f.input :start_point, label: "Starting point",
                   input_html: {data: { address_autocomplete_target: "address"}, class: "d-none" },
@@ -16,7 +16,8 @@
                   class: "d-none",
                   data: { controller: "address-autocomplete",
                           address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
-                          field_input_target: "togglableElement"}} %>
+                          field_input_target: "togglableElementDistance"}
+                                } %>
 
       <%= f.input :end_point, label: "Endpoint",
                   input_html: {data: { address_autocomplete_target: "address"}, class: "d-none"},
@@ -25,16 +26,16 @@
                     data: {
                       controller: "address-autocomplete",
                       address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"],
-                      field_input_target: "togglableElement"
-                    },
-                  } %>
+                      field_input_target: "togglableElementDistance"
+                     },
+                              } %>
 
       <%= f.input :duration, label: "How long will you run?",
-                  class: "d-none",
+                  wrapper_html: { class: "d-none",data: { field_input_target: "togglableElementDuration" } },
+                  data: { field_input_target: "togglableElementDuration" },
                   prompt: "Choose your favorite TV show",
                   collection: Challenge::DURATIONS,
-                  input_html: { class: "inputs", data: { field_input_target: "input", action: "change->field-input#toggleDuration" }
-                  } %>
+                  input_html: { class: "inputs" } %>
 
       <%= f.input :title, label: "Challenge name",
                   placeholder: "From Paris to Marseille",
