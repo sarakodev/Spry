@@ -1,7 +1,12 @@
- <% progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round(2) %>
- <div class="progress-wrapper">
-  <div class="progress-container">
-    <div class="progress-bar" style="width: <%= progress_percentage %>%;">
+<% @progress_percentage = ((participation.distance.to_f / challenge.distance.to_f) * 100).round(2) %>
+
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" 
+        style="width: <%= @progress_percentage %>%;" 
+        aria-valuenow="<%= @progress_percentage %>" 
+        aria-valuemin="0" aria-valuemax="100">
+      </div>
     </div>
-  </div>
-</div>
+
+

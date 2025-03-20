@@ -5,10 +5,10 @@
                           0
                         end %>
 
-<div class="progress-percentage text-center mt-3">
-  <h3 class="text-center"><strong><%= progress_percentage %> %</strong></h3>
+<div class="progress-percentage text-center mt-4">
+  <h3 class="text-center mb-3"><strong><%= progress_percentage %> %</strong></h3>
   <%= render 'challenges/progress_bar', challenge: challenge, participation: participation %>
-  <p class="progress-distance">
+  <p class="progress-distance mt-2">
     Goal: <%= challenge.distance.present? ? challenge.distance.round : 'N/A' %>km
   </p>
 </div>
