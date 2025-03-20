@@ -7,7 +7,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new(challenge_params)
     @challenge.user = current_user
 
-    @challenge.duration = parse_duration if params[:challenge][:duration] && @challenge.distance.zero?
+    @challenge.duration = parse_duration if params[:challenge][:duration] && @challenge.distance == 0
 
     if @challenge.save
       Participation.create(user_id: current_user.id, challenge_id: @challenge.id)
