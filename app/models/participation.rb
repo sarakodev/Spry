@@ -4,7 +4,7 @@ class Participation < ApplicationRecord
   after_update :update_challenge_completion
 
   def update_challenge_completion
-    total_distance = challenge.participations.map(&:distance).sum
+    total_distance = challenge.participations.map(&:distance).compact.sum
     completion = (total_distance.fdiv(challenge.distance))
     challenge.update(completion: completion)
   end

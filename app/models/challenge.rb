@@ -16,8 +16,9 @@ class Challenge < ApplicationRecord
   geocoded_by :end_point, latitude: :end_latitude, longitude: :end_longitude
   after_validation if: -> { :will_save_change_to_start_point? || :will_save_change_to_end_point? } do
     geocode
-    set_distance
   end
+
+  after_create :set_distance, if: :saved_change_to_start_latitude?
 
   private
 
@@ -35,6 +36,7 @@ class Challenge < ApplicationRecord
   end
 
   def set_distance
-    self.distance = Geocoder::Calculations.distance_between([self.start_latitude, self.start_longitude], [self.end_latitude, self.end_longitude])
+    self.update(distance: Geocoder::Calculations.distance_between([self.start_latitude, self.start_longitude], [self.end_latitude, self.end_longitude]))
+
   end
 end

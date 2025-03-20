@@ -1,6 +1,27 @@
 <div class="container-new-distance mt-3 text-center">
-  <%= simple_form_for participation, local: true do |f| %>
-    <%= f.input :distance, label: "Add a new run", input_html: { min: 0, max: challenge.distance, style: "border-radius: 15px;" } %>
+  <%= simple_form_for participation, local: true, data: { controller: "distance" } do |f| %>
+    <%= f.input :distance,
+                label: "Add a new run",
+                input_html: {
+                              min: 0,
+                              max: challenge.distance,
+                              style: "border-radius: 15px;",
+                              class: 'd-none',
+                              data: {
+                                      distance_target: 'inputValue'
+                                    }
+                            }
+    %>
+    <%= text_field_tag :new_distance,
+                       0,
+                       class: "form-control numeric float optional",
+                       min: 0,
+                       max: challenge.distance,
+                       style: "border-radius: 15px;",
+                       data: {
+                              distance_target: 'newInputValue',
+                              action: 'keyup->distance#increment'
+                              } %>
     <%= f.button :submit %>
   <% end %>
 </div>
