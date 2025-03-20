@@ -13,13 +13,15 @@
       Goal: <%= challenge.distance.present? ? challenge.distance.round : 'N/A' %>km
     </p>
   </div>
-<% else %> 
- <% total_duration = challenge.participations.sum(:duration) || 0
-    progress_percentage = if participation&.duration.present? && challenge.duration.present?
-                            ((participation.duration / challenge.duration) * 100).round
+<% else %>
+  <%
+    total_duration = challenge.participations.sum(:duration) || 0
+    progress_percentage = if participation&.duration.present? && challenge.duration.present? && challenge.duration != 0
+                            ((participation.duration.to_f / challenge.duration.to_f) * 100).round
                           else
                             0
-                          end %>
+                          end
+  %>
 
   <div class="progress-percentage text-center mt-4">
     <h3 class="text-center mb-3"><strong><%= progress_percentage %> %</strong></h3>
