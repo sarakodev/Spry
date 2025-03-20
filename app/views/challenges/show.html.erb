@@ -1,7 +1,18 @@
  <%= render "challenges/navigation_back_logout" %>
 <div class="container">
   <div class="container-card-challenge-details-show">
-    <%= render "challenges/challenge_details", challenge: @challenge, participation: @challenge.participations.first %>
+    <% if @challenge.category == "Distance challenge" %>
+      <%= render "challenges/distance_challenge_details", challenge: @challenge, participation: @participation %>
+    <% else %>
+      <%= render "challenges/duration_challenge_details", challenge: @challenge, participation: @participation %>
+    <% end %>
+
+
     <%# <%= render "shared/nav_progression", participation: @challenge.participations.first, challenge: @challenge, simple: false %>
   </div>
 </div>
+
+<%# hours = @challenge.duration.fdiv(60)
+   minutes = @challenge.duration % 60
+   string = "#{hours}h#{minutes}"
+%>
