@@ -1,14 +1,40 @@
-<% total_distance = challenge.participations.sum(:distance) || 0
-  progress_percentage = if participation&.distance.present? && challenge.distance.present?
-                          ((participation.distance.to_f / challenge.distance.to_f) * 100).round
-                        else
-                          0
-                        end %>
+<% if challenge.category == "Distance challenge" %>
+  <% total_distance = challenge.participations.sum(:distance) || 0
+    progress_percentage = if participation&.distance.present? && challenge.distance.present?
+                            ((participation.distance.to_f / challenge.distance.to_f) * 100).round
+                          else
+                            0
+                          end %>
 
-<div class="progress-percentage text-center mt-4">
-  <h3 class="text-center mb-3"><strong><%= progress_percentage %> %</strong></h3>
-  <%= render 'challenges/progress_bar', challenge: challenge, participation: participation %>
-  <p class="progress-distance mt-2">
-    Goal: <%= challenge.distance.present? ? challenge.distance.round : 'N/A' %>km
-  </p>
-</div>
+  <div class="progress-percentage text-center mt-4">
+    <h3 class="text-center mb-3"><strong><%= progress_percentage %> %</strong></h3>
+    <%= render 'challenges/progress_bar', challenge: challenge, participation: participation %>
+    <p class="progress-distance mt-2">
+      Goal: <%= challenge.distance.present? ? challenge.distance.round : 'N/A' %>km
+    </p>
+  </div>
+<% else %>
+ <% total_duration = challenge.participations.sum(:duration) || 0
+    progress_percentage = if participation&.duration.present? && challenge.duration.present?
+                            ((participation.duration / challenge.duration) * 100.round)
+                          else
+                            0
+                          end %>
+
+  <div class="progress-percentage text-center mt-4">
+    <h3 class="text-center mb-3"><strong><%= progress_percentage %> %</strong></h3>
+    <%= render 'challenges/progress_bar', challenge: challenge, participation: participation %>
+    <p class="progress-distance mt-2">
+      <% hours = @challenge.duration.fdiv(60).round
+        minutes = (@challenge.duration % 60).to_i
+        duration_string = "#{hours}h#{"0" if minutes < 10}#{minutes}"
+      %>
+      Goal: <%= challenge.duration.present? ? duration_string : 'N/A' %>
+    </p>
+  </div>
+<% end %>
+
+<%# hours = @challenge.duration.fdiv(60)
+   minutes = @challenge.duration % 60
+   string = "#{hours}h#{minutes}"
+%>
