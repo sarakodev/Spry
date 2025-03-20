@@ -1,6 +1,6 @@
 <div class="container-new-distance mt-3 text-center">
   <%= simple_form_for participation, local: true do |f| %>
-    <%= f.input :distance, label: "Add a new run", input_html: { min: 0, max: challenge.distance }, class: "" %>
+    <%= f.input :distance, label: "Add a new run", input_html: { min: 0, max: challenge.distance, style: "border-radius: 15px;" } %>
     <%= f.button :submit %>
   <% end %>
 </div>

@@ -1,3 +1,4 @@
+<div class="container-card-challenge-details pt-3">
 <%= link_to challenge_path(challenge), class: "plain" do %>
   <div class="container-card-challenge-details-info">
     <div class="container-information">
@@ -10,6 +11,11 @@
     </div>
       <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
        <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
+       <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
+
       </div>
     </div>
+  </div>
+</div>
 <% end %>
+</div>

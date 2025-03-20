@@ -1,5 +1,7 @@
 class Challenge < ApplicationRecord
   CATEGORIES = ["Distance challenge", "Duration challenge"]
+  DURATIONS = ["The Office (US) - S1 | 2h30", "Fleabag - S1 | 2h36", "Desperate Housewives - S1 | 16h29", "Suits - S1 | 8h24"]
+
 
   has_many :participations
   has_many :users, through: :participations, dependent: :destroy
