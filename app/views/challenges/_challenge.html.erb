@@ -1,21 +1,14 @@
-<div class="container-card-challenge-details pt-3">
 <%= link_to challenge_path(challenge), class: "plain" do %>
-  <div class="container-card-challenge-details-info">
-    <div class="container-information">
-    <div class="challenge-header pb-3">
-      <div class="challenge-info">
-        <h1 class="challenge-team-index" ><%= challenge.team_name %></h1>
-        <h6 class="challenge-name-index"><%= challenge.title %></h6>
-      </div>
-      <%= render "shared/profil_challenge", challenge: challenge %>
-    </div>
+   <div class="container-card-challenge-details-info">
+     <div class="container-information">
+      <div class="challenge-header pb-3">
+        <div class="challenge-info">
+          <h1 class="challenge-team-index" ><%= challenge.team_name %></h1>
+          <h6 class="challenge-name-index"><%= challenge.title %></h6>
+        </div>
+          <%= render "shared/profil_challenge", challenge: challenge %>
+        </div>
       <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
-       <%= render "shared/nav_progression", participation: challenge.participations.first, challenge: challenge, simple: true %>
-       <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
-
       </div>
     </div>
-  </div>
-</div>
 <% end %>
-</div>
