@@ -398,22 +398,22 @@ participation = Participation.create(
   challenge_id: Challenge.first.id
 )
 participation = Participation.create(
-  distance: 100,
+  distance: 0,
   user_id: User.first.id,
   challenge_id: Challenge.second.id
 )
 participation = Participation.create(
-  distance: 100,
+  distance: 0,
   user_id: User.second.id,
   challenge_id: Challenge.second.id
 )
 participation = Participation.create(
-  distance: 100,
+  distance: 0,
   user_id: User.third.id,
   challenge_id: Challenge.second.id
 )
 participation = Participation.create(
-  distance: 100,
+  distance: 0,
   user_id: User.fourth.id,
   challenge_id: Challenge.second.id
 )
