@@ -34,3 +34,8 @@
 .mapboxgl-ctrl-geocoder {
   border-radius: 15px;
 }
+
+/* Change la couleur de la loupe de la searchbar de map */
+.mapboxgl-ctrl-geocoder--icon-search {
+  fill: #FF5400;
+}
