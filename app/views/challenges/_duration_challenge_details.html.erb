@@ -1,6 +1,6 @@
  <div class="container-void">
       <div class="container-void w-100">
-        <div class="challenge-team-index"><%= @challenge.team_name %></div>
+        <div class="challenge-team-show"><%= @challenge.team_name %></div>
         <div class="challenge-name-index"><%= @challenge.title %></div>
 
        <div class="duration-challenge-img">
@@ -21,26 +21,26 @@
           <div class="card-challenge-container">
             <div class="card distance-card">
               <div class="card-icon">
-                <!-- Icône de distance -->
-                <i class="fa-solid fa-person-running"></i>
+                <!-- Icône de durée - sablier -->
+                <i class="fa-solid fa-hourglass-start"></i>
               </div>
               <div class="card-content">
-                <% total_distance = challenge.participations.sum(:distance).round %>
-                <span class="card-value"><%= total_distance %></span>
-                <span class="card-label">Kilometers</span>
+                <% total_duration = challenge.participations.sum(:duration).round %>
+                <span class="card-value"><%= total_duration %></span>
+                <span class="card-label">Hours</span>
               </div>
             </div>
 
             <div class="card steps-card">
               <div class="card-icon">
-                <!-- Icône de pas -->
-               <i class="fa-solid fa-stairs"></i>
+                <!-- Icône de feu -->
+                <i class="fa-solid fa-fire"></i>
               </div>
               <div class="card-content">
-                  <% total_distance = challenge.participations.sum(:distance).round %>
-                  <% total_steps = total_distance * 1500 %>
-                  <span class="card-value"><%= format_steps(total_steps) %></span>
-                  <span class="card-label">Steps</span>
+                  <% total_duration = challenge.participations.sum(:duration).round %>
+                  <% total_calories = total_duration * 500 %>
+                  <span class="card-value"><%= total_calories %></span>
+                  <span class="card-label">Calories</span>
                 </div>
               </div>
             </div>
