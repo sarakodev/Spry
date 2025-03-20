@@ -5,13 +5,13 @@
 
        <div class="duration-challenge-img">
           <% if @challenge.duration == 504.0 %>
-            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/1_tsj7oz.png">
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/1_tsj7oz.png" class="img-rounded">
           <% elsif @challenge.duration == 150.0 %>
-            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/3_u0inhf.png">
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/3_u0inhf.png" class="img-rounded">
           <% elsif @challenge.duration == 156.0 %>
-            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/2_lrlaag.png">
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/2_lrlaag.png" class="img-rounded">
           <% else %>
-            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/4_k0f543.png">
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/4_k0f543.png" class="img-rounded">
           <% end %>
        </div>
 
@@ -26,8 +26,12 @@
               </div>
               <div class="card-content">
                 <% total_duration = challenge.participations.sum(:duration).round %>
-                <span class="card-value"><%= total_duration %></span>
-                <span class="card-label">Hours</span>
+                    <% hours = total_duration.fdiv(60).round
+                      minutes = (total_duration % 60).to_i
+                      duration_string = "#{hours}h#{"0" if minutes < 10}#{minutes}"
+                    %>
+                <span class="card-value"><%= duration_string %></span>
+                <span class="card-label">Time</span>
               </div>
             </div>
 
@@ -38,8 +42,8 @@
               </div>
               <div class="card-content">
                   <% total_duration = challenge.participations.sum(:duration).round %>
-                  <% total_calories = total_duration * 500 %>
-                  <span class="card-value"><%= total_calories %></span>
+                  <% total_calories = (total_duration / 60) * 500 %>
+                  <span class="card-value"><%= format_calories(total_calories) %></span>
                   <span class="card-label">Calories</span>
                 </div>
               </div>
