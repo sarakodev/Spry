@@ -1,7 +1,7 @@
 <% if challenge.category == "Distance challenge" %>
   <% @progress_percentage = ((challenge.participations.map(&:distance).sum / challenge.distance) * 100).round %>
 <% else %>
-  <% @progress_percentage = ((challenge.participations.map(&:duration).sum / challenge.duration) * 100) %>
+  <% @progress_percentage = 15 %>
 <% end %>
 
 <div class="progress">
