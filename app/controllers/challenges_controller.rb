@@ -7,6 +7,8 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new(challenge_params)
     @challenge.user = current_user
 
+    @challenge.duration = parse_duration if params[:challenge][:duration]
+
     if @challenge.save
       Participation.create(user_id: current_user.id, challenge_id: @challenge.id)
       redirect_to challenge_path(@challenge), notice: "Your new challenge just started!"
@@ -42,6 +44,17 @@ class ChallengesController < ApplicationController
   end
 
   private
+
+  def parse_duration
+    string = params[:challenge][:duration].split(' | ')[1]
+    if string.match?(/(\d+)h(\d+)/)
+      match_data = string.match(/(\d+)h(\d+)/)
+      hours = match_data[1].to_i
+      minutes = match_data[2].to_i
+      total_minutes = hours * 60 + minutes
+      return total_minutes
+    end
+  end
 
   def challenge_params
     params.require(:challenge).permit(:category, :start_point, :end_point, :duration, :title, :team_name, user_ids: [])
