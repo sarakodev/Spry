@@ -2,7 +2,7 @@ class ParticipationsController < ApplicationController
   def update
     @participation = Participation.find(params[:id])
     if @participation.update(participation_params)
-      redirect_to @participation, notice: "Distance updated"
+      redirect_to challenge_path(@participation.challenge), notice: "Distance updated"
     else
       render :show
     end
