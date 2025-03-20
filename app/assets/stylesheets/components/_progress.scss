@@ -1,30 +1,24 @@
 .progress-wrapper {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    flex-direction: column; /* Aligne les éléments en colonne */
-    width: 100%;
-    margin: 20px 0; /* Espacement au-dessus et en dessous */
-  }
-/* Arrière-plan sombre pour la barre de progression */
-.progress-container {
-    width: 80%;
-    height: 10px;
-    background: #decdd7; /* Fond sombre */
-    border-radius: 10px;
-    position: relative; /* Effet d'ombre */
-  }
+  width: 100%;
+  margin: 20px 0;
+}
 
-  /* Barre de progression avec effet néon */
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #780245; /* Dégradé bleu-violet */
-    text-align: center;
-    line-height: 20px;
-    border-radius: 10px;
-    min-width: 40px; /* Assure que le texte est toujours visible */
-    white-space: nowrap;
-    min-width: 0;
-  
-  }
+/* Personnalisation de la barre de progression Bootstrap */
+.progress {
+  height: 10px;
+  background-color: #decdd7; /* Fond de la barre */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: #780245; /* Couleur de remplissage */
+  transition: width 0.5s ease-in-out;
+}
+
+/* Personnalisation du pourcentage */
+.progress-percentage {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}

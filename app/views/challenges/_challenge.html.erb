@@ -8,7 +8,15 @@
         </div>
           <%= render "shared/profil_challenge", challenge: challenge %>
         </div>
-      <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
+        <div class="row align-items-center progress-wrapper">
+          <!-- Colonne pour la barre de progression -->
+          <div class="col-10">     
+              <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
+          </div>
+           <div class="col-2 text-end">
+              <h3 class="progress-percentage mb-0 mr-2"><strong><%= @progress_percentage.round %> %</strong></h3>
+            </div>
+        </div> 
       </div>
     </div>
 <% end %>
