@@ -84,3 +84,33 @@
   border-radius: 16px;
   font-size: 22px;
 }
+
+
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1rem;
+  margin-inline: 1rem;
+
+  .container-information {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .challenge-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+
+    .challenge-name-index {
+      text-align: start;
+    }
+
+    .participant-avatars {
+      align-self: end;
+    }
+  }
+}
