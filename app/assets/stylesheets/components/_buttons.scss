@@ -1,3 +1,16 @@
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:focus-visible {
+  color: white !important;
+  padding: 10px;
+  border: none;
+  background: #780245 !important;
+  transition: none !important;
+  border: 1px solid #780245 !important;
+  box-shadow: none !important;
+}
+
 .btn-bk:hover {
   background: #3D3D3D;
 }
@@ -37,9 +50,6 @@
 }
 
 
-.btn-challenge {
-
-}
 
 .return-btn-inbox {
   position: absolute;

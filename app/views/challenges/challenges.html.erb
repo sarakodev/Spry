@@ -8,7 +8,7 @@
   </div>
 
   <%# <div class="container-card-challenge-details"> %>
-    <div class="dashboard-container challenges-list">
+    <div class="dashboard-container-challenges challenges-list">
       <% if @challenges.any? %>
         <% @challenges.each do |challenge| %>
           <%= render "challenges/challenge", challenge: challenge %>
@@ -19,3 +19,5 @@
     </div>
   <%# </div> %>
 </div>
+
+
