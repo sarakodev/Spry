@@ -1,18 +1,13 @@
  <%= render "challenges/navigation_back_logout" %>
 <div class="container">
-  <%= button_to "Connecter avec Strava", 
-    '/auth/strava', 
-    method: :post,
-    class: "strava-connect-button",
-    params: { callback_url: "/auth/strava/callback/#{@challenge.id}" },
-    data: { turbo: false } %>
+  
   <div class="container-card-challenge-details-show">
     <% if @challenge.category == "Distance challenge" %>
       <%= render "challenges/distance_challenge_details", challenge: @challenge, participation: @participation %>
     <% else %>
       <%= render "challenges/duration_challenge_details", challenge: @challenge, participation: @participation %>
     <% end %>
-    
+
 
 
     <%# <%= render "shared/nav_progression", participation: @challenge.participations.first, challenge: @challenge, simple: false %>

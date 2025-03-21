@@ -23,7 +23,6 @@ class StravaSyncService
 
     # Récupérer les activités récentes
     activities = api_client.athlete_activities
-
     participation = @user.participations.find_by(challenge: @challenge)
 
     activities.each do |activity|
@@ -51,12 +50,12 @@ class StravaSyncService
       client_id: ENV['STRAVA_CLIENT_ID'],
       client_secret: ENV['STRAVA_CLIENT_SECRET']
     )
-    
+
     response = client.oauth_token(
       refresh_token: @user.strava_refresh_token,
       grant_type: 'refresh_token'
     )
-    
+
     @user.update(
       strava_access_token: response.access_token,
       strava_refresh_token: response.refresh_token,

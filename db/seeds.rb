@@ -256,7 +256,7 @@ base_time += 5.days # 28 days later
 event = Event.create(
   name: "Track Running",
   location: "1 Avenue Pierre De Coubertin, Paris",
-  datetime: base_time.change(hour: 9, min: 0),
+  datetime: DateTime.new(2025,3,23.5),
   pace: 4.5,
   participants: 5,
   user: User.second,
@@ -362,18 +362,17 @@ challenge = Challenge.create(
   team_name: "Team Chacha 🐈",
   start_point: "Paris, France",
   end_point: "Marseille, France",
-  distance: 800,
   user_id: User.first.id,
+  created_at: 4.month.ago
 )
 challenge = Challenge.create(
   title: "Run from Paris to Marseille together",
   category: "Distance challenge",
-  team_name: "Team Chacha 🐈",
+  team_name: "Team Wagon 🚂",
   start_point: "Paris, France",
   end_point: "Marseille, France",
-  distance: 800,
   user_id: User.first.id,
-  created_at: 7.day.ago
+  created_at: 4.month.ago
 )
 challenge.save!
 puts "created a distance challenge"

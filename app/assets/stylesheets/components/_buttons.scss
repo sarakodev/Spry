@@ -99,3 +99,16 @@
   transition: 0.3s ease;
   font-size: 16px;
 }
+
+.strava-connect-button {
+  color: white !important;
+  padding: 10px;
+  border: none;
+  background: #FF5400 !important;
+  transition: none !important;
+  border: 1px solid #FF5400 !important;
+  box-shadow: none !important;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+}

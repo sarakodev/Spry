@@ -37,9 +37,8 @@ class Challenge < ApplicationRecord
 
   def set_distance
     self.update(distance: Geocoder::Calculations.distance_between([self.start_latitude, self.start_longitude], [self.end_latitude, self.end_longitude]))
-
   end
 
 
-  
+
 end
