@@ -56,3 +56,10 @@
     <% end %>
   </div>
 <% end %>
+
+<%= button_to "Connect with Strava",
+    '/auth/strava',
+    method: :post,
+    class: "strava-connect-button",
+    params: { callback_url: "/auth/strava/callback/#{@challenge.id}" },
+    data: { turbo: false } %>
