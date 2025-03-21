@@ -1,12 +1,13 @@
 <div class="participant-avatars">
+
   <%= cl_image_tag challenge.user.photo.key, class: "participant-avatar" %>
 
-  <% 
+  <%
     second_participant = if challenge.user == current_user
       challenge.participations.includes(:user).map(&:user).reject { |user| user == current_user }.first
     else
       current_user
-    end 
+    end
   %>
 
   <% if second_participant.present? %>

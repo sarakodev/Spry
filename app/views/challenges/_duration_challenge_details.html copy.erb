@@ -1,18 +1,20 @@
  <div class="container-void">
       <div class="container-void w-100">
-        <div class="challenge-team-show"><%= @challenge.team_name %></div>
+        <div class="challenge-team-index"><%= @challenge.team_name %></div>
         <div class="challenge-name-index"><%= @challenge.title %></div>
-        <div class="map-container">
-          <div style="height: 200px;"
-            data-controller="map-challenge"
-            data-map-challenge-markers-value="<%= @markers.to_json %>"
-            data-map-challenge-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-            data-map-challenge-show-controls-value="false"
-            data-map-challenge-show-popup-value="false"
-            data-map-challenge-zoom-map-value="true"
-            data-map-challenge-progress-value="<%=  @challenge.completion %>">
-          </div>
-        </div>
+
+       <div class="duration-challenge-img">
+          <% if @challenge.duration == 504.0 %>
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/1_tsj7oz.png">
+          <% elsif @challenge.duration == 150.0 %>
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/3_u0inhf.png">
+          <% elsif @challenge.duration == 156.0 %>
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/2_lrlaag.png">
+          <% else %>
+            <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/4_k0f543.png">
+          <% end %>
+       </div>
+
         <div class="progress-container-all">
           <%= render 'challenges/progress_block_show', challenge: @challenge, participation: participation %>
           <div class="summary-container w-100">

@@ -1,14 +1,36 @@
 <%= link_to challenge_path(challenge), class: "plain" do %>
-   <div class="container-card-challenge-details-info">
-     <div class="container-information">
-      <div class="challenge-header pb-3">
-        <div class="challenge-info">
-          <h1 class="challenge-team-index" ><%= challenge.team_name %></h1>
-          <h6 class="challenge-name-index"><%= challenge.title %></h6>
-        </div>
-          <%= render "shared/profil_challenge", challenge: challenge %>
-        </div>
-      <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
+  <div class="container-card-challenge">
+
+    <div class="container-info-challenge">
+      <% if challenge.category == "Distance challenge" %>
+        <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742483071/Design_sans_titre-5_bem5b0.png" class="card-challenge-img">
+      <% elsif challenge.duration == 504.0 %>
+        <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/1_tsj7oz.png" class="card-challenge-img">
+      <% elsif challenge.duration == 150.0 %>
+        <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/3_u0inhf.png" class="card-challenge-img">
+      <% elsif challenge.duration == 156.0 %>
+        <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/2_lrlaag.png" class="card-challenge-img">
+      <% else %>
+        <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1742470488/4_k0f543.png" class="card-challenge-img">
+      <% end %>
+
+      <div class="challenge-text-infos">
+        <h1 class="challenge-team-name" ><%= challenge.team_name %></h1>
+        <h6 class="challenge-name-title"><%= challenge.title %></h6>
       </div>
     </div>
+
+    <div class="progress-and-avatar-container">
+
+      <div class="progress-bar-container">
+        <%= render "progress_bar", participation: challenge.participations.first, challenge: challenge %>
+        <h3 class="progress-percentage mb-0 mr-2"><strong><%= @progress_percentage %> %</strong></h3>
+      </div>
+
+      <%= render "shared/profil_challenge", challenge: challenge %>
+
+    </div>
+
+
+  </div>
 <% end %>

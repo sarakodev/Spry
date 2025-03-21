@@ -11,6 +11,6 @@ class ParticipationsController < ApplicationController
   private
 
   def participation_params
-    params.require(:participation).permit(:distance)
+    params.require(:participation).permit(:distance, :duration)
   end
 end
