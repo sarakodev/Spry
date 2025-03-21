@@ -1,7 +1,7 @@
 class Participation < ApplicationRecord
   belongs_to :user
   belongs_to :challenge
-  after_update :update_challenge_completion
+  after_save :update_challenge_completion
 
   def update_challenge_completion
     if challenge.distance.present?

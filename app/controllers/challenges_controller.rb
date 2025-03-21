@@ -20,6 +20,8 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     session[:challenge_id] = @challenge.id
+
+    @challenge.update_completion
     @participation = @challenge.participations.find_by(user: current_user, challenge: @challenge)
     @markers = [
       {
