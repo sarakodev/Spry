@@ -373,6 +373,7 @@ challenge = Challenge.create(
   end_point: "Marseille, France",
   distance: 800,
   user_id: User.first.id,
+  created_at: 7.day.ago
 )
 challenge.save!
 puts "created a distance challenge"

@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def fullname
     "#{first_name} #{last_name}"
   end
+
+  def sync_strava_activities(challenge)
+    StravaSyncService.new(self, challenge).sync_activities
+  end
 end

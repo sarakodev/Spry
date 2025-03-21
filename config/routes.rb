@@ -41,4 +41,8 @@ Rails.application.routes.draw do
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
+
+  get '/auth/strava/callback/', to: 'strava_auth#callback'
+  get '/auth/failure', to: 'strava_auth#failure'
+  get '/connect_strava', to: 'strava_auth#connect'
 end
