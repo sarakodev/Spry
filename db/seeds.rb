@@ -366,11 +366,11 @@ challenge = Challenge.create(
   created_at: 4.month.ago
 )
 challenge = Challenge.create(
-  title: "Run from Paris to Marseille together",
+  title: "Run from Paris to Nantes together",
   category: "Distance challenge",
   team_name: "Team Wagon 🚂",
   start_point: "Paris, France",
-  end_point: "Marseille, France",
+  end_point: "Nantes, France",
   user_id: User.first.id,
   created_at: 4.month.ago
 )
@@ -420,4 +420,65 @@ participation = Participation.create(
 participation.save!
 puts "created a participation"
 
+challenge = Challenge.create(
+  title: "The Office Sprint",
+  category: "Duration challenge",
+  team_name: "Team Michael Scott",
+  duration: 150.0,
+  completion: 0.22,
+  user_id: User.first.id,
+  created_at: 4.month.ago
+)
+
+challenge = Challenge.create(
+  title: "Fleabag Challenge",
+  category: "Duration challenge",
+  team_name: "Team Phoebe",
+  duration: 156.0,
+  completion: 0.32,
+  user_id: User.first.id,
+  created_at: 4.month.ago
+)
+challenge.save!
+puts "created a duration challenge"
+
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.first.id,
+  challenge_id: Challenge.third.id
+)
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.first.id,
+  challenge_id: Challenge.fourth.id
+)
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.second.id,
+  challenge_id: Challenge.third.id
+)
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.second.id,
+  challenge_id: Challenge.fourth.id
+)
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.third.id,
+  challenge_id: Challenge.fourth.id
+)
+
+participation = Participation.create(
+  duration: 0,
+  user_id: User.third.id,
+  challenge_id: Challenge.third.id
+)
+
+participation.save!
+puts "created a participation"
 puts "all done, congratulations!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_20_133234) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_20_162135) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,18 +57,18 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_133234) do
     t.string "category"
     t.boolean "completed"
     t.float "completion"
-    t.float "distance"
-    t.float "duration"
+    t.float "distance", default: 0.0
+    t.float "duration", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "start_point"
     t.string "end_point"
     t.string "team_name"
-    t.bigint "user_id", null: false
     t.float "start_latitude"
     t.float "start_longitude"
     t.float "end_latitude"
     t.float "end_longitude"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 
