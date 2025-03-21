@@ -53,6 +53,11 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "geocoder"
 gem "solid_cable"
+gem 'strava-ruby-client'
+gem 'omniauth'
+gem 'omniauth-strava'
+gem 'omniauth-rails_csrf_protection'
+gem 'multi_json'
 
 group :development, :test do
   gem "dotenv-rails"
