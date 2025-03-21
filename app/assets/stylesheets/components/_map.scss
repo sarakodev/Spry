@@ -39,3 +39,7 @@
 .mapboxgl-ctrl-geocoder--icon-search {
   fill: #FF5400;
 }
+
+.mapboxgl-ctrl-geocoder--input:focus {
+  outline: none
+}

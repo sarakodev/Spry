@@ -20,6 +20,19 @@ class Challenge < ApplicationRecord
 
   after_create :set_distance, if: :saved_change_to_start_latitude?
 
+  def update_completion
+    if self.category == "Distance challenge"
+      # Handle distance-based challenges
+      total_distance = self.participations.map(&:distance).compact.sum
+      completion = (total_distance.fdiv(self.distance))
+    else
+      # Handle duration-based challenges
+      total_duration = self.participations.map(&:duration).compact.sum
+      completion = (total_duration.fdiv(self.duration))
+    end
+    self.update(completion: completion)
+  end
+
   private
 
   def geocode
@@ -38,6 +51,8 @@ class Challenge < ApplicationRecord
   def set_distance
     self.update(distance: Geocoder::Calculations.distance_between([self.start_latitude, self.start_longitude], [self.end_latitude, self.end_longitude]))
   end
+
+
 
 
 

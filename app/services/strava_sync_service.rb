@@ -31,9 +31,11 @@ class StravaSyncService
         if @challenge.category == "Distance challenge"
           new_distance = participation.distance.to_f + (activity.distance.to_f / 1000) # Conversion en km
           participation.update(distance: new_distance)
+          participation.update_challenge_completion
         elsif @challenge.category == "Duration challenge"
           new_duration = participation.duration + activity.moving_time * 60 # Temps en secondes
           participation.update(duration: new_duration)
+          participation.update_challenge_completion
         end
       end
     end
